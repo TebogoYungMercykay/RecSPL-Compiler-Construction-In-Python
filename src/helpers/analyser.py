@@ -1,6 +1,6 @@
 from semantics import SemanticAnalyzer
 from utilities.tree_crawling import XMLSemanticAnalyzer
-from src.utilities.xml_methods import write_to_file
+from utilities.xml_methods import write_to_file
 
 
 def analyser(parser_filepath, crawling_filepath, semantics_filepath):

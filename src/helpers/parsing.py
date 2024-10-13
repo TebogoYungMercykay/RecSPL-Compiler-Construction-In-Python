@@ -1,5 +1,5 @@
 from parser import Parser
-from src.utilities.xml_methods import (
+from utilities.xml_methods import (
     write_to_file,
     parse_xml_tokens,
     convert_syntax_tree_to_pretty_xml,
