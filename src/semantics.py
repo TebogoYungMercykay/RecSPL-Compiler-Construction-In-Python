@@ -1,6 +1,6 @@
 # Semantic Analyser for the RecSPL Language
 from utilities.tree_crawling import XMLSemanticAnalyzer
-from src.helpers.node_class import SymbolInfo
+from helpers.node_class import SymbolInfo
 
 class SemanticError(Exception):
     pass

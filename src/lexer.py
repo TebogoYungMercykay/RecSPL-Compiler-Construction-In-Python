@@ -1,6 +1,6 @@
 # Lexer for the RecSPL Language
 import re
-from src.utilities.xml_methods import tokens_to_xml
+from utilities.xml_methods import tokens_to_xml
 
 class Token:
     def __init__(self, token_type, token_value, token_class):
