@@ -1,0 +1,16 @@
+main
+num V_x, num V_y, text V_message,
+begin
+    V_x < input;
+    V_x = not(V_x);
+end
+num F_1(V_a, V_b, V_msg)
+    {
+        begin
+            V_temp = add(V_a, V_b);
+            V_t = div(V_temp, 2);
+        end
+        num V_t, num V_temp, text V_output,
+    }
+    end
+end

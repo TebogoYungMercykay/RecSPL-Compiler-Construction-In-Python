@@ -1,0 +1,141 @@
+main
+num V_x, num V_y, text V_message,
+begin
+    V_x < input;
+    V_x = not(V_x);
+    V_y = add(V_x, 5);
+    V_message = "Hello";
+    if div(add(3,4), grt(3,4)) then
+        begin
+            print V_message;
+            print V_y;
+        end
+    else
+        begin
+            V_y = mul(V_y, 2);
+            print V_y;
+        end;
+    F_calculate(V_x, V_y, V_message);
+end
+num F_calculate(V_a, V_b, V_msg)
+    {
+        num V_t, num V_temp, text V_output,
+        begin
+            V_temp = add(V_a, V_b);
+            V_t = div(V_temp, 2);
+            if eq(V_t, 10) then
+                begin
+                    V_output = "Equal";
+                end
+            else
+                begin
+                    V_output = "Notequal";
+                end;
+            print V_msg;
+            print V_output;
+            print V_t;
+            F_calculate(V_t, V_y, V_message);
+            return V_t;
+        end
+    }
+    num F_calculates(V_a, V_b, V_msg)
+        {
+            num V_x, num V_kemp, text V_kutput,
+            begin
+                V_kemp = add(V_a, V_b);
+                V_x = div(V_kemp, 2);
+                if eq(V_x, 10) then
+                    begin
+                        V_output = "Equal";
+                    end
+                else
+                    begin
+                        V_output = "Notequal";
+                    end;
+                print V_msg;
+                print V_output;
+                print V_t;
+                F_calculate(V_t, V_y, V_message);
+                return V_t;
+            end
+        }
+        end
+    void F_noname(V_t, V_r, V_y)
+        {
+            num V_r, text V_out, text V_mess,
+            begin
+                V_x = or(V_t, V_r);
+                V_out = add("Result", V_x);
+                print V_out;
+                F_noname(V_a, V_b, V_y);
+            end
+        }
+        void F_nonames(V_t, V_r, V_y)
+            {
+                num V_j, text V_lout, text V_lmess,
+                begin
+                    V_x = or(V_t, V_r);
+                    V_out = add("Result", V_x);
+                    print V_out;
+                    F_noname(V_a, V_b, V_y);
+                end
+            }
+            end
+        end
+    end
+void F_nonames(V_t, V_r, V_y)
+    {
+        num V_j, text V_lout, text V_lmess,
+        begin
+            V_x = or(V_t, V_r);
+            V_out = add("Result", V_x);
+            print V_out;
+            F_noname(V_a, V_b, V_y);
+        end
+    }
+    num F_calculated(V_a, V_b, V_msg)
+        {
+            num V_l, num V_mtemp, text V_moutput,
+            begin
+                V_temp = add(V_a, V_b);
+                V_t = div(V_temp, 2);
+                if eq(V_t, 10) then
+                    begin
+                        V_output = "Equal";
+                    end
+                else
+                    begin
+                        V_output = "Notequal";
+                    end;
+                print V_msg;
+                print V_output;
+                print V_t;
+                F_calculate(V_t, V_y, V_message);
+                return V_t;
+            end
+        }
+        num F_calculate(V_a, V_b, V_msg)
+            {
+                num V_j, text V_lout, text V_lmess,
+                begin
+                    V_temp = add(V_a, V_b);
+                    V_t = div(V_temp, 2);
+                    if eq(V_t, 10) then
+                        begin
+                            V_output = "Equal";
+                        end
+                    else
+                        begin
+                            V_output = "Notequal";
+                        end;
+                    print V_msg;
+                    print V_output;
+                    print V_t;
+                    F_calculate(V_t, V_y, V_message);
+                    return V_t;
+                end
+            }
+            end
+        end
+    end
+end

@@ -1,0 +1,40 @@
+main
+num V_x, num V_y, text V_message, jk,
+begin
+    V_x < input;
+    V_x = not(V_x);
+    V_y = add(V_x, 5);
+    V_message = "Hello";
+    if div(add(3,4), grt(3,4)) then
+        begin
+            print V_message;
+            print V_y;
+        end
+    else
+        begin
+            V_y = mul(V_y, 2);
+            print V_y;
+        end;
+    F_calculate(V_x, V_y, V_message);
+end
+num F_calculate(V_a, V_b, V_msg)
+    {
+        num V_t, num V_temp, text V_output,
+        begin
+            V_temp = add(V_a, V_b);
+            V_t = div(V_temp, 2);
+            if eq(V_t, 10) then
+                begin
+                    V_output = "Equal";
+                end
+            else
+                print V_msg;
+            print V_msg;
+            print V_output;
+            print V_t;
+            F_calculate(V_t, V_y, V_message);
+            return V_t;
+        end
+    }
+    end
+end

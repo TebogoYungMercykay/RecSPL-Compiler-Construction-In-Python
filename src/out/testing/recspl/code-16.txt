@@ -1,0 +1,17 @@
+main
+num V_x, num V_y, text V_message,
+begin
+    V_x < input;
+    V_x = not(V_x);
+    V_y = add(V_x, 5);
+    V_message = "Hello";
+end
+num _calculate(V_a, V_b, V_msg)
+    {
+        begin
+            V_temp = add(V_a, V_b);
+            V_t = div(V_temp, 2);
+        end
+    }
+    end
+end
