@@ -1,7 +1,7 @@
 # Tree-Crawling Algorythm
 
 import xml.etree.ElementTree as ET
-from src.helpers.node_class import NodeInfo
+from helpers.node_class import NodeInfo
 from utilities.random_id import generate_random_id
 
 
