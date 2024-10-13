@@ -1,4 +1,4 @@
-# parser for the RecSPL Language
+# Parser for the RecSPL Language
 from helpers.syntax_tree import SyntaxTree
 
 class Parser:
