@@ -101,9 +101,9 @@ In this example codeL:
 #### Rules
 
 - No variable name may be double-declared (twice) in the same scope.
-    - Eg. No string X and also number X in the same scope.
+  - Eg. No string X and also number X in the same scope.
 - The declaration of a used variable name must be found either within that name's own scope or in any higher ancestor scope.
-- If a used variable name has two declarations in twi different scopes, then the "nearest" declaration is the relevant declaration for that variable.
+- If a used variable name has two declarations in two different scopes, then the "nearest" declaration is the relevant declaration for that variable.
 - Every used variable name must have a declaration.
 - No variable anywhere in the program may have a name that is also used as a Function name anywhere in the program.
 - No variable name anywhere in the program may be identical with any reserved keyword.
