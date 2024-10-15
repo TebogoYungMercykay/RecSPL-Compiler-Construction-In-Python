@@ -22,18 +22,46 @@ The project will include the following main components:
 4. **Type-Checker**: Performs semantic analysis and type checking.
 5. **Code-Generator**: Generates target code or intermediate representation.
 
-## Usage
+## How to Run Compiler:
 
-To run the compiler:
+- ### Installing Python Virtual Environment:
 
-```bash
-python test.py
-```
+  ```bash
+  <!-- # Installing dependencies -->
+  sudo apt-get update
+  sudo apt-get install python3-venv
+  python3 -m venv venv
+  ```
+- ### Activating the Python Virtual Environment:
+
+  ```bash
+  source venv/bin/activate
+  ```
+
+- ### Deactivating the Python Virtual Environment:
+
+  ```bash
+  deactivate
+  ```
+
+- ### Run/Test The Compiler:
+
+  ```bash
+  <!-- #Chnage Directories -->
+  cd src
+  <!-- # Instling Dependencies -->
+  pip install -r requirements.txt
+
+  <!-- # Runnung the Compiler -->
+  python main.py
+  <!-- # Running the Tests -->
+  pytest .
+  ```
 
 ## Development Guidelines
 
 1. **Modularity**: Keep each component (lexer, parser, etc.) in separate files or modules.
-2. **Testing**: Write unit tests for each component in `test.py` or a dedicated `tests/` directory.
+2. **Testing**: Write unit tests for each component in `/tests/filename_test.py` or a dedicated `tests/` directory.
 3. **Documentation**: Document your code thoroughly, including function descriptions and complex logic explanations.
 4. **Error Handling**: Implement robust error handling and reporting throughout the compilation process.
 
@@ -62,7 +90,7 @@ Compilation outputs and intermediate files are stored in the `out/` directory. R
 
 ## Resources
 
-- [Compiler Design Theory](../docs/Introduction%20to%20Compiler%20Design-Springer%20International%20Publishing%20(2017).pdf)
+- [Compiler Design Lecture Tips](./docs/lecture%20tips/README.md)
 - [Language Specification](docs/specification/RecSPL_2024.md)
 - [Project Documentation](docs/README.md)
 

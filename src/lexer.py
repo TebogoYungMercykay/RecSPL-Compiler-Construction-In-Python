@@ -156,5 +156,5 @@ class Lexer:
             return False
         else:
             tokens_to_xml(filename, tokens)
-            print("Lexing Successful.")
+            print("\033[92mLexing Successful.\033[0m")
             return True
