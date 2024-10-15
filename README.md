@@ -27,7 +27,7 @@ The project will include the following main components:
 - ### Installing Python Virtual Environment:
 
   ```bash
-  <!-- # Installing dependencies -->
+  # Installing dependencies
   sudo apt-get update
   sudo apt-get install python3-venv
   python3 -m venv venv
@@ -47,14 +47,14 @@ The project will include the following main components:
 - ### Run/Test The Compiler:
 
   ```bash
-  <!-- #Chnage Directories -->
+  # Change Directories
   cd src
-  <!-- # Instling Dependencies -->
+  # Instling Dependencies
   pip install -r requirements.txt
 
-  <!-- # Runnung the Compiler -->
+  # Runnung the Compiler
   python main.py
-  <!-- # Running the Tests -->
+  # Running the Tests
   pytest .
   ```
 
