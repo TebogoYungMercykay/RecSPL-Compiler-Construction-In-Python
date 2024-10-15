@@ -1,4 +1,15 @@
 # Semantic Analyser for the RecSPL Language
+
+""" TODO: CONFIRM AND TEST THE FOLLOWING
+# Functions
+- Add Function Parameters to the Symbol Table
+- No Calls to main function
+# variables
+- The declaration of a used variable name must be found either within that name's own scope or in any higher ancestor scope.
+- If a used variable name has two declarations in two different scopes, then the "nearest" declaration is the relevant declaration for that variable.
+- No variable anywhere in the program may have a name that is also used as a Function name anywhere in the program.
+"""
+
 from utilities.tree_crawling import XMLSemanticAnalyzer
 from helpers.node_class import SymbolInfo
 
