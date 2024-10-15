@@ -163,3 +163,7 @@ cython_debug/
 
 */material/
 material/*
+
+# Ignoring README PDF Files
+*/README.pdf
+README.pdf
