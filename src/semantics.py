@@ -1,4 +1,40 @@
-# Semantic Analyser for the RecSPL Language
+# SEMANTICS PART
+
+""" TODO: CONFIRM AND TEST THE FOLLOWING
+# Functions
+- Add Function Parameters to the Symbol Table
+- No Calls to main function
+# variables
+- The declaration of a used variable name must be found either within that name's own scope or in any higher ancestor scope.
+- If a used variable name has two declarations in two different scopes, then the "nearest" declaration is the relevant declaration for that variable.
+- No variable anywhere in the program may have a name that is also used as a Function name anywhere in the program.
+"""
+
+# TESTING PART
+
+""" TODO: Add Test Cases For The Following Rules
+# Functions
+- The main program forms the highest level scope, with no "parent".
+- Every function declaration opens it's own scope.
+- A child scope may not have the same function name as it's immediate parent scope.
+- A child scope may not have the same name as any of it's sibling scopes under the same parent.
+- A call command may refer to an immediate child-scope.
+- A call command may refer to it's own scope: That is RECURSION.
+- There may be no recursive call to main function!.
+- The compiler's SEMANTIC ANALYSIS MODULE must throw an Error Report, if any of the semantic rules of above are violated!.
+
+# Variables
+- No variable name may be double-declared (twice) in the same scope.
+  - Eg. No string X and also number X in the same scope.
+- The declaration of a used variable name must be found either within that name's own scope or in any higher ancestor scope.
+- If a used variable name has two declarations in two different scopes, then the "nearest" declaration is the relevant declaration for that variable.
+- Every used variable name must have a declaration.
+- No variable anywhere in the program may have a name that is also used as a Function name anywhere in the program.
+- No variable name anywhere in the program may be identical with any reserved keyword.
+- Two variables with the same name are different computational entities if they are rooted in different scopes.
+- The compiler's SEMANTIC ANALYTICS MODULE must throw an Error Report, if any of the semantic rules of above are violated!.
+"""
+
 from utilities.tree_crawling import XMLSemanticAnalyzer
 from helpers.node_class import SymbolInfo
 
