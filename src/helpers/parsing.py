@@ -20,7 +20,7 @@ def parsing(lexer_filepath, parser_filepath):
         write_to_file(pretty_xml, parser_filepath)
 
         print(f"Syntax Tree Generated and Saved to {parser_filepath}")
-        print("Parsing successful.")
+        print("\033[92mParsing successful.\033[0m")
         print("----------------------------------\n\n")
 
         return True

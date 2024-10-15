@@ -26,7 +26,7 @@ def analyser(parser_filepath, crawling_filepath, semantics_filepath):
         write_to_file(result, semantics_filepath)
 
         print(f"Semantics' Symbol Table Generated and Saved to {semantics_filepath}")
-        print("Semantic Analysis successful.")
+        print("\033[92mSemantic Analysis successful.\033[0m")
         print("----------------------------------\n\n")
 
         return True
