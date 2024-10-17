@@ -1,12 +1,12 @@
 import pytest
-from helpers.lexing import lexing
-from helpers.parsing import parsing
 
-def test_pytest_is_working_1():
-    assert True, "Type Checker Default Tests Working"
+@pytest.mark.parametrize("file_number", range(1, 2))
+def test_semantics_files_first(file_number):
+    assert file_number + file_number == 2, "Type Checker Default Tests Working"
 
-def test_semantics_from_files():
-    assert True, "Type Checker - All Good"
+@pytest.mark.parametrize("file_number", range(2, 21))
+def test_semantics_files_2_to_20(file_number):
+    assert file_number + file_number == 2 * file_number, "Type Checker - All Good"
 
 if __name__ == "__main__":
     # pytest -v

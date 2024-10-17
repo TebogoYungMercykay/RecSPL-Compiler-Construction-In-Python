@@ -37,13 +37,11 @@ The project will include the following main components:
   ```bash
   source venv/bin/activate
   ```
-
 - ### Deactivating the Python Virtual Environment:
 
   ```bash
   deactivate
   ```
-
 - ### Run/Test The Compiler:
 
   ```bash
@@ -56,6 +54,8 @@ The project will include the following main components:
   python main.py
   # Running the Tests
   pytest .
+  # Running Tests and Showing Output
+  pytest -s
   ```
 
 ## Development Guidelines
