@@ -29,17 +29,17 @@ class Parser:
         else:
             if self.current_token is None:
                 raise SyntaxError(
-                    f"Unexpected End of InputStream, Expected token {expected_word}"
+                    f"Unexpected End of InputStream, Expected token '{expected_word}'"
                 )
             elif expected_word is not None and self.current_token["word"] is None:
                 raise SyntaxError(f"Unexpected token: {expected_word}")
             elif expected_word is None and self.current_token["word"] is not None:
                 raise SyntaxError(
-                    f"Unexpected End of InputStream, Missing {self.current_token['word']} in input"
+                    f"Unexpected End of InputStream, Missing '{self.current_token['word']}' in input"
                 )
             else:
                 raise SyntaxError(
-                    f"Expected {expected_word}, But got {self.current_token['word']}"
+                    f"Expected {expected_word}, But got '{self.current_token['word']}'"
                 )
 
     def parse(self):
@@ -56,8 +56,13 @@ class Parser:
 
         functions_node = self.syntax_tree.add_inner_node(root, "FUNCTIONS")
         self.parse_functions(functions_node)
-
-        return self.syntax_tree
+        
+        if (self.current_token != None):
+            raise SyntaxError(
+                f"Expected end of the Input, But got '{self.current_token['word']}'"
+            )
+        else:
+            return self.syntax_tree
 
     def parse_globvars(self, parent_node):
         """Parses GLOBVARS -> ε | VTYP VNAME , GLOBVARS"""
@@ -84,7 +89,7 @@ class Parser:
             )
         else:
             raise SyntaxError(
-                f"Variable Type: Expected a num or text, But got {self.current_token['word']}"
+                f"Variable Type: Expected a num or text, But got '{self.current_token['word']}'"
             )
 
     def parse_vname(self, parent_node):
@@ -95,7 +100,7 @@ class Parser:
             self.add_token_as_leaf("V", self.current_token["word"], vname_node)
         else:
             raise SyntaxError(
-                f"Variable Name: Expected a VNAME (V), But got {self.current_token['word']}"
+                f"Variable Name: Expected a VNAME (V), But got '{self.current_token['word']}'"
             )
 
     def parse_algo(self, parent_node):
@@ -141,7 +146,7 @@ class Parser:
         elif token == "if":
             self.parse_branch(command_node)
         else:
-            raise SyntaxError(f"Command: Unexpected Command Token: {token}")
+            raise SyntaxError(f"Command: Unexpected Command Token: '{token}'")
 
     def parse_assign(self, parent_node):
         """Parses ASSIGN -> VNAME < input | VNAME = TERM"""
@@ -156,7 +161,7 @@ class Parser:
             self.parse_term(assign_node)
         else:
             raise SyntaxError(
-                f"Assignment: Expected < or =, But got {self.current_token['word']}"
+                f"Assignment: Expected < or =, But got '{self.current_token['word']}'"
             )
 
     def parse_call(self, parent_node):
@@ -206,7 +211,7 @@ class Parser:
             self.parse_op(op_node)
         else:
             raise SyntaxError(
-                f"Term: Unexpected Token in TERM: {self.current_token['word']}"
+                f"Term: Unexpected Token in TERM: '{self.current_token['word']}'"
             )
 
     def parse_op(self, parent_node):
@@ -242,7 +247,7 @@ class Parser:
             self.add_token_as_leaf("reserved_keyword", ")", op_node)
         else:
             raise SyntaxError(
-                f"Operator: Unexpected Operator Token: {self.current_token['word']}"
+                f"Operator: Unexpected Operator Token: '{self.current_token['word']}'"
             )
 
     def parse_atomic(self, parent_node):
@@ -256,7 +261,7 @@ class Parser:
             self.parse_const(atomic_node)
         else:
             raise SyntaxError(
-                f"Atomic: Expected an ATOMIC, But got {self.current_token['word']}"
+                f"Atomic: Expected an ATOMIC, But got '{self.current_token['word']}'"
             )
 
     def parse_const(self, parent_node):
@@ -269,7 +274,7 @@ class Parser:
             )
         else:
             raise SyntaxError(
-                f"Constant: Expected a CONST (N or T), But got {self.current_token['word']}"
+                f"Constant: Expected a CONST (N or T), But got '{self.current_token['word']}'"
             )
 
     def parse_cond(self, parent_node):
@@ -310,7 +315,7 @@ class Parser:
                 raise SyntaxError("Condition: Invalid UNOP input in COND")
         else:
             raise SyntaxError(
-                f"Condition: Expected SIMPLE or COMPOSIT, got {self.current_token['word']}"
+                f"Condition: Expected SIMPLE or COMPOSIT, got '{self.current_token['word']}'"
             )
 
     def parse_simple(self, parent_node):
@@ -340,7 +345,7 @@ class Parser:
             self.parse_composit(simple_node)
         else:
             raise SyntaxError(
-                f"Simple: Expected BINOP or COMPOSIT, got {self.current_token['word']}"
+                f"Simple: Expected BINOP or COMPOSIT, got '{self.current_token['word']}'"
             )
 
     def parse_composit(self, parent_node):
@@ -377,7 +382,7 @@ class Parser:
             self.add_token_as_leaf("reserved_keyword", ")", op_node)
         else:
             raise SyntaxError(
-                f"Composit: Expected BINOP or UNOP, got {self.current_token['word']}"
+                f"Composit: Expected BINOP or UNOP, got '{self.current_token['word']}'"
             )
 
     def parse_arg(self, parent_node):
@@ -401,7 +406,7 @@ class Parser:
             self.parse_op(op_node)
         else:
             raise SyntaxError(
-                f"Argument: Expected an ARG, But got {self.current_token['word']}"
+                f"Argument: Expected an ARG, But got '{self.current_token['word']}'"
             )
 
     def parse_functions(self, parent_node):
@@ -447,7 +452,7 @@ class Parser:
             )
         else:
             raise SyntaxError(
-                f"Funtion Type: Expected num or void, But got {self.current_token['word']}"
+                f"Funtion Type: Expected num or void, But got '{self.current_token['word']}'"
             )
 
     def parse_fname(self, parent_node):
@@ -458,7 +463,7 @@ class Parser:
             self.add_token_as_leaf("F", self.current_token["word"], fname_node)
         else:
             raise SyntaxError(
-                f"Function Name: Expected a FNAME (F), But got {self.current_token['word']}"
+                f"Function Name: Expected a FNAME (F), But got '{self.current_token['word']}'"
             )
 
     def parse_body(self, parent_node):
