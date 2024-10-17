@@ -2910,9 +2910,4 @@
         <CLASS>reserved_keyword</CLASS>
         <WORD>end</WORD>
     </TOK>
-    <TOK>
-        <ID>583</ID>
-        <CLASS>reserved_keyword</CLASS>
-        <WORD>end</WORD>
-    </TOK>
 </TOKENSTREAM>
