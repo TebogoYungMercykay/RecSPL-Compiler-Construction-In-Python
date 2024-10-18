@@ -1,7 +1,7 @@
 import pytest
 from helpers.lexing import lexing
 
-@pytest.mark.parametrize("file_number", range(1, 5))
+@pytest.mark.parametrize("file_number", range(1, 6))
 def test_lexing_files_1_to_5(file_number):
     assert lexing(f"out/testing/tokens/lexer-{file_number}.xml", f"out/testing/recspl/code-{file_number}.txt") == True
 
