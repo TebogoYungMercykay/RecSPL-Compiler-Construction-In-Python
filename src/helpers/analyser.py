@@ -8,7 +8,6 @@ def analyser(parser_filepath, crawling_filepath, semantics_filepath):
     print("----------------------------------")
     try:
         # Example Usage
-        parser_filepath = "out/syntax_tree.xml"
         semantic_an = SemanticAnalyzer(parser_filepath)
         semantic_an.analyze()  # Start the semantic analysis
 
