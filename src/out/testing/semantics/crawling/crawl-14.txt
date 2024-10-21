@@ -11,7 +11,7 @@ Node ID    Type       Word            Scope      Parent ID  Token ID   Token Cla
 39         undefined  V_e             1          38         20         V                 main > FUNCTIONS > DECL > HEADER > VNAME
 42         undefined  V_f             1          41         22         V                 main > FUNCTIONS > DECL > HEADER > VNAME
 50         num        V_a             1          49         26         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
-55         num        V_h             1          54         29         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
+55         num        V_e             1          54         29         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
 60         text       V_i             1          59         32         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
 72         undefined  V_k             2          71         38         V                 main > FUNCTIONS > DECL > BODY > ALGO > INSTRUC > COMMAND > ATOMIC > VNAME
 ===============================================================================================================================================================================================================================================
