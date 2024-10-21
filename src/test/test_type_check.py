@@ -1,7 +1,8 @@
 import pytest
 
+print("\033[94m\n==== TYPE CHECKER: TEST CASES USING PYTEST ====\n\033[0m")
+
 def test_pytest_is_working_1():
-    print("\033[94m\n==== TYPE CHECKER: TEST CASES USING PYTEST ====\n\033[0m")
     assert 1 + 1 == 2, "Default Test For Type Checker Is Working!"
 
 @pytest.mark.parametrize("file_number", range(1, 2))

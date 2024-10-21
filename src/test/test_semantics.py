@@ -3,8 +3,9 @@ from helpers.analyser import analyser
 from helpers.lexing import lexing
 from helpers.parsing import parsing
 
+print("\033[94m\n==== SEMANTICS: TEST CASES USING PYTEST ====\n\033[0m")
+
 def test_pytest_is_working_1():
-    print("\033[94m\n==== SEMANTICS: TEST CASES USING PYTEST ====\n\033[0m")
     assert 1 + 1 == 2, "Default Test For Semantics Is Working!"
 
 @pytest.mark.parametrize("file_number", range(1, 21))
