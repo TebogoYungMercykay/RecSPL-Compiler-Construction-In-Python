@@ -4,7 +4,6 @@ import xml.etree.ElementTree as ET
 from helpers.node_class import NodeInfo
 from utilities.random_id import generate_random_id
 
-
 class XMLSemanticAnalyzer:
     def __init__(self, xml_file):
         self.tree = ET.parse(xml_file)
@@ -18,10 +17,10 @@ class XMLSemanticAnalyzer:
         program_node = self.root.find(".//ROOT")
         scope_id = generate_random_id()
         self.scope_ids.append(scope_id)
-        self.analyze_program(program_node, self.scope, [], "ROOT", scope_id)
+        self.analyze_program(program_node, self.scope, [], "ROOT", scope_id, None)
         self.set_types()
 
-    def analyze_program(self, program_node, scope, class_list, node_type, scope_id):
+    def analyze_program(self, program_node, scope, class_list, node_type, scope_id, parent_scope_id):
         children = program_node.find("CHILDREN")
         num_children = self.len_children(children)
 
@@ -35,12 +34,13 @@ class XMLSemanticAnalyzer:
             if (
                 symb is not None
                 and symb.text != "ε"
-                and symb.text in ["BODY", "ALGO", "BRANCH"]
+                and symb.text in ["DECL", "ALGO", "BRANCH"]
             )
             else scope
         )
         if new_scope != scope:
             while scope_id in self.scope_ids:
+                parent_scope_id = scope_id
                 scope_id = generate_random_id()
             self.scope_ids.append(scope_id)
 
@@ -58,6 +58,7 @@ class XMLSemanticAnalyzer:
                 program_node.find("TERMINAL/TOK/ID").text,  # token_id
                 program_node.find("TERMINAL/TOK/CLASS").text,  # token_class
                 scope_id,  # scope id
+                parent_scope_id, # Parent Scope Id
             )
 
         for counter in range(1, (num_children + 1)):
@@ -75,6 +76,7 @@ class XMLSemanticAnalyzer:
                     class_list.copy(),
                     "INNER_NODE",
                     scope_id,
+                    parent_scope_id
                 )
             elif (
                 var_name_leaf_node is not None
@@ -86,9 +88,30 @@ class XMLSemanticAnalyzer:
                     class_list.copy(),
                     "LEAF_NODE",
                     scope_id,
+                    parent_scope_id
                 )
 
     def set_types(self):
+        ids = []
+        for node_id, node_info in self.node_table.items():
+            if node_info is not None and node_info.token_class == "reserved_keyword":
+                target = self.node_table.get(str(int(node_id) + 2), None)
+                if target is not None:
+                    target.set_type(node_info.word)
+                    ids.append(node_id)
+                else:
+                    raise ValueError(
+                        f"404: Matching Variable Name for this Type:'{node_info.word}' NOT FOUND."
+                    )
+
+        for id in ids:
+            removed = self.node_table.pop(id, None)
+            if removed is None:
+                raise ValueError(
+                    f"404: Node with ID '{node_id}' NOT FOUND in Hash Table."
+                )
+                
+    def set_values(self):
         ids = []
         for node_id, node_info in self.node_table.items():
             if node_info is not None and node_info.token_class == "reserved_keyword":
