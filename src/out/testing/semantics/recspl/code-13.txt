@@ -22,7 +22,7 @@ num F_calculate(V_d, V_e, V_f)
     }
         void F_calculated(V_p, V_q, V_r)
         {
-            num V_s, text V_t, text V_u,
+            num V_p, text V_t, text V_u,
             begin
                 skip;
                 print V_a;

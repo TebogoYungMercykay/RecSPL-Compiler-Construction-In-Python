@@ -8,7 +8,7 @@ num F_calculate(V_d, V_e, V_f)
     num V_g, num V_h, text V_i,
     begin
         skip;
-        F_calculate(V_v, V_w, V_x);
+        F_calculate(V_g, V_h, V_i);
     end
 }
 end

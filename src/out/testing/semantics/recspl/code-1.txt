@@ -1,140 +1,140 @@
 main
-num V_x, num V_y, text V_message,
+num V_aa, num V_ab, text V_ac,
 begin
-    V_x < input;
-    V_x = not(V_x);
-    V_y = add(V_x, 5);
-    V_message = "Hello";
+    V_aa < input;
+    V_aa = not(V_aa);
+    V_ab = add(V_aa, 5);
+    V_ac = "Hello";
     if div(add(3,4), grt(3,4)) then
         begin
-            print V_message;
-            print V_y;
+            print V_ac;
+            print V_ab;
         end
     else
         begin
-            V_y = mul(V_y, 2);
-            print V_y;
+            V_ab = mul(V_ab, 2);
+            print V_ab;
         end;
-    F_calculate(V_x, V_y, V_message);
+    F_aa(V_aa, V_ab, V_ac);
 end
-num F_calculate(V_a, V_b, V_msg)
-{
-    num V_t, num V_temp, text V_output,
-    begin
-        V_temp = add(V_a, V_b);
-        V_t = div(V_temp, 2);
-        if eq(V_t, 10) then
-            begin
-                V_output = "Equal";
-            end
-        else
-            begin
-                V_output = "Notequal";
-            end;
-        print V_msg;
-        print V_output;
-        print V_t;
-        F_calculate(V_t, V_y, V_message);
-        return V_t;
-    end
-}
-    num F_calculates(V_a, V_b, V_msg)
+num F_aa(V_ad, V_ae, V_af)
     {
-        num V_x, num V_kemp, text V_kutput,
+        num V_ag, num V_ah, text V_ai,
         begin
-            V_kemp = add(V_a, V_b);
-            V_x = div(V_kemp, 2);
-            if eq(V_x, 10) then
+            V_ah = add(V_ad, V_ae);
+            V_ag = div(V_ah, 2);
+            if eq(V_ag, 10) then
                 begin
-                    V_output = "Equal";
+                    V_ai = "Equal";
                 end
             else
                 begin
-                    V_output = "Notequal";
+                    V_ai = "Notequal";
                 end;
-            print V_msg;
-            print V_output;
-            print V_t;
-            F_calculate(V_t, V_y, V_message);
-            return V_t;
+            print V_af;
+            print V_ai;
+            print V_ag;
+            F_aa(V_ag, V_ab, V_ac);
+            return V_ag;
         end
     }
-    end
-    void F_noname(V_t, V_r, V_y)
-    {
-        num V_r, text V_out, text V_mess,
-        begin
-            V_x = or(V_t, V_r);
-            V_out = add("Result", V_x);
-            print V_out;
-            F_noname(V_a, V_b, V_y);
-        end
-    }
-        void F_nonames(V_t, V_r, V_y)
+    num F_ab(V_aj, V_ak, V_al)
         {
-            num V_j, text V_lout, text V_lmess,
+            num V_am, num V_an, text V_ao,
             begin
-                V_x = or(V_t, V_r);
-                V_out = add("Result", V_x);
-                print V_out;
-                F_noname(V_a, V_b, V_y);
-            end
-        }
-        end
-    end
-end
-void F_nonames(V_t, V_r, V_y)
-{
-    num V_j, text V_lout, text V_lmess,
-    begin
-        V_x = or(V_t, V_r);
-        V_out = add("Result", V_x);
-        print V_out;
-        F_noname(V_a, V_b, V_y);
-    end
-}
-    num F_calculated(V_a, V_b, V_msg)
-    {
-        num V_l, num V_mtemp, text V_moutput,
-        begin
-            V_temp = add(V_a, V_b);
-            V_t = div(V_temp, 2);
-            if eq(V_t, 10) then
-                begin
-                    V_output = "Equal";
-                end
-            else
-                begin
-                    V_output = "Notequal";
-                end;
-            print V_msg;
-            print V_output;
-            print V_t;
-            F_calculate(V_t, V_y, V_message);
-            return V_t;
-        end
-    }
-        num F_calculate(V_a, V_b, V_msg)
-        {
-            num V_j, text V_lout, text V_lmess,
-            begin
-                V_temp = add(V_a, V_b);
-                V_t = div(V_temp, 2);
-                if eq(V_t, 10) then
+                V_an = add(V_aj, V_ak);
+                V_am = div(V_an, 2);
+                if eq(V_am, 10) then
                     begin
-                        V_output = "Equal";
+                        V_ai = "Equal";
                     end
                 else
                     begin
-                        V_output = "Notequal";
+                        V_ai = "Notequal";
                     end;
-                print V_msg;
-                print V_output;
-                print V_t;
-                F_calculate(V_t, V_y, V_message);
-                return V_t;
+                print V_al;
+                print V_ai;
+                print V_ag;
+                F_aa(V_ag, V_ab, V_ac);
+                return V_ag;
             end
         }
         end
+    void F_ac(V_ap, V_aq, V_ar)
+        {
+            num V_as, text V_at, text V_au,
+            begin
+                V_aa = or(V_ap, V_aq);
+                V_at = add("Result", V_aa);
+                print V_at;
+                F_ac(V_ad, V_ae, V_ar);
+            end
+        }
+        void F_aa(V_av, V_aw, V_ax)
+            {
+                num V_ay, text V_az, text V_ba,
+                begin
+                    V_aa = or(V_av, V_aw);
+                    V_at = add("Result", V_aa);
+                    print V_at;
+                    F_ac(V_ad, V_ae, V_ax);
+                end
+            }
+            end
+        end
     end
-end
+void F_ae(V_bb, V_bc, V_bd)
+    {
+        num V_be, text V_bf, text V_bg,
+        begin
+            V_aa = or(V_bb, V_bc);
+            V_at = add("Result", V_aa);
+            print V_at;
+            F_ac(V_ad, V_ae, V_bd);
+        end
+    }
+    num F_af(V_bh, V_bi, V_bj)
+        {
+            num V_bk, num V_bl, text V_bm,
+            begin
+                V_ah = add(V_bh, V_bi);
+                V_ag = div(V_ah, 2);
+                if eq(V_ag, 10) then
+                    begin
+                        V_ai = "Equal";
+                    end
+                else
+                    begin
+                        V_ai = "Notequal";
+                    end;
+                print V_bj;
+                print V_ai;
+                print V_ag;
+                F_aa(V_ag, V_ab, V_ac);
+                return V_ag;
+            end
+        }
+        num F_ag(V_bn, V_bo, V_bp)
+            {
+                num V_bq, text V_br, text V_bs,
+                begin
+                    V_ah = add(V_bn, V_bo);
+                    V_ag = div(V_ah, 2);
+                    if eq(V_ag, 10) then
+                        begin
+                            V_ai = "Equal";
+                        end
+                    else
+                        begin
+                            V_ai = "Notequal";
+                        end;
+                    print V_bp;
+                    print V_ai;
+                    print V_ag;
+                    F_aa(V_ag, V_ab, V_ac);
+                    return V_ag;
+                end
+            }
+            end
+        end
+    end
