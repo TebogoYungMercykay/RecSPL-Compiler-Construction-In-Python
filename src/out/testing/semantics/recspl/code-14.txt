@@ -5,7 +5,7 @@ begin
 end
 num F_calculate(V_d, V_e, V_f)
 {
-    num V_a, num V_h, text V_i,
+    num V_a, num V_e, text V_i,
     begin
         skip;
         print V_k;
