@@ -1,21 +1,30 @@
 
 Hash Table Contents:
-=============================================================================
-Node ID    Type       Word            Value           Parent ID  Token Class
------------------------------------------------------------------------------
-6          num        v1              undefined       5          V
-11         num        v2              undefined       10         V
-16         text       v3              undefined       15         V
-33         num        f1              undefined       32         F
-50         num        v4              undefined       49         V
-55         num        v5              undefined       54         V
-60         text       v6              undefined       59         V
-83         void       f2              undefined       82         F
-100        num        v7              undefined       99         V
-105        text       v8              undefined       104        V
-110        text       v9              undefined       109        V
-133        void       f3              undefined       132        F
-150        num        v10             undefined       149        V
-155        text       v11             undefined       154        V
-160        text       v12             undefined       159        V
-=============================================================================
+===============================================================================================
+Node ID    Type       Word       Value           Parent ID  Class  Real Name       Category       
+-----------------------------------------------------------------------------------------------
+6          num        v1         undefined       5          V      V_a             declaration    
+11         num        v2         undefined       10         V      V_b             declaration    
+16         text       v3         undefined       15         V      V_c             declaration    
+33         num        f1         undefined       32         F      F_calculate     declaration    
+36         undefined  v4         undefined       35         V      V_d             parameter      
+39         undefined  v5         undefined       38         V      V_e             parameter      
+42         undefined  v6         undefined       41         V      V_f             parameter      
+50         num        v7         undefined       49         V      V_g             declaration    
+55         num        v8         undefined       54         V      V_h             declaration    
+60         text       v9         undefined       59         V      V_i             declaration    
+77         void       f2         undefined       76         F      F_calculates    declaration    
+80         undefined  v10        undefined       79         V      V_j             parameter      
+83         undefined  v11        undefined       82         V      V_k             parameter      
+86         undefined  v12        undefined       85         V      V_l             parameter      
+94         num        v13        undefined       93         V      V_m             declaration    
+99         text       v14        undefined       98         V      V_n             declaration    
+104        text       v15        undefined       103        V      V_o             declaration    
+123        void       f3         undefined       122        F      F_calculates    declaration    
+126        undefined  v16        undefined       125        V      V_m             parameter      
+129        undefined  v17        undefined       128        V      V_n             parameter      
+132        undefined  v18        undefined       131        V      V_o             parameter      
+140        num        v19        undefined       139        V      V_p             declaration    
+145        text       v20        undefined       144        V      V_q             declaration    
+150        text       v21        undefined       149        V      V_r             declaration    
+===============================================================================================
