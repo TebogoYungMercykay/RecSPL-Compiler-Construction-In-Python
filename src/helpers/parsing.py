@@ -6,7 +6,7 @@ from utilities.xml_methods import (
 )
 
 def parsing(lexer_filepath, parser_filepath):
-    print("-- Parsing The RecSPL Code --")
+    print("\n-- Parsing The RecSPL Code --")
     print("----------------------------------")
 
     tokens = parse_xml_tokens(lexer_filepath)
