@@ -127,7 +127,7 @@
         <IN>
             <PARENT>27</PARENT>
             <UNID>28</UNID>
-            <SYMB>FUNCTION</SYMB>
+            <SYMB>DECL</SYMB>
             <CHILDREN>
                 <ID>29</ID>
                 <ID>44</ID>
@@ -339,7 +339,7 @@
         <IN>
             <PARENT>77</PARENT>
             <UNID>78</UNID>
-            <SYMB>FUNCTION</SYMB>
+            <SYMB>DECL</SYMB>
             <CHILDREN>
                 <ID>79</ID>
                 <ID>94</ID>
@@ -578,7 +578,7 @@
         <IN>
             <PARENT>133</PARENT>
             <UNID>134</UNID>
-            <SYMB>FUNCTION</SYMB>
+            <SYMB>DECL</SYMB>
             <CHILDREN>
                 <ID>135</ID>
                 <ID>150</ID>
@@ -1710,7 +1710,7 @@
                 <TOK>
                     <ID>83</ID>
                     <CLASS>V</CLASS>
-                    <WORD>V_s</WORD>
+                    <WORD>V_p</WORD>
                 </TOK>
             </TERMINAL>
         </LEAF>
