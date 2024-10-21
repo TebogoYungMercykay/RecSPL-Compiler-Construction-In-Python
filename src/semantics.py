@@ -43,11 +43,13 @@ class SemanticAnalyzer:
         if node_info.is_function_decl():  # Function Declaration
             self.process_function_declaration(node_info, current_scope)
             # Adding current node to the symbol table
-            self.add_to_symbol_table(node_info, current_scope, node_info.type)
+            self.add_to_symbol_table(node_info, "declaration")
         elif node_info.is_variable_decl():  # Variable Declaration
             self.process_variable_declaration(node_info, current_scope)
             # Adding current node to the symbol table
-            self.add_to_symbol_table(node_info, current_scope, node_info.type)
+            self.add_to_symbol_table(node_info, "declaration")
+        elif node_info.is_function_parameter():  # Function Parameter
+            self.add_to_symbol_table(node_info, "parameter")
         else:
             if node_info.token_class == "V":
                 self.check_variable_usage(node_info, current_scope)
@@ -63,7 +65,7 @@ class SemanticAnalyzer:
         )
         if result is not None:
             raise SemanticError(
-                f"Function '{function_name}' already declared in {result} scope"
+                f"Function '{function_name}' already declared in {result} scope."
             )
 
     def process_variable_declaration(self, node_info, current_scope):
@@ -74,9 +76,14 @@ class SemanticAnalyzer:
             node_info, variable_name, current_scope
         )
         if result is not None:
-            raise SemanticError(
-                f"Variable '{variable_name}' already declared in {result} scope"
-            )
+            if result == "Parameter":
+                raise SemanticError(
+                    f"Variable '{variable_name}' already declared as a function parameter."
+                )    
+            else:
+                raise SemanticError(
+                    f"Variable '{variable_name}' already declared in {result} scope."
+                )
 
     def check_variable_usage(self, node_info, current_scope):
         for scope in self.reversed:
@@ -89,7 +96,9 @@ class SemanticAnalyzer:
                         ):
                             return
 
-        raise SemanticError(f"Variable '{node_info.word}' used but not declared.")
+        raise SemanticError(
+            f"Variable '{node_info.word}' used but not declared."
+        )
 
     def check_function_usage(self, node_info, current_scope):
         for scope in self.reversed:
@@ -102,9 +111,11 @@ class SemanticAnalyzer:
                         ):  # node_info.token_id != node.token_id
                             return
 
-        raise SemanticError(f"Function '{node_info.word}' used but not declared.")
+        raise SemanticError(
+            f"Function '{node_info.word}' used but not declared."
+        )
 
-    def add_to_symbol_table(self, node_info, current_scope, type):
+    def add_to_symbol_table(self, node_info, category):
         unique_name = (
             self.get_and_increment_counter_var()
             if node_info.token_class == "V"
@@ -118,8 +129,10 @@ class SemanticAnalyzer:
             node_info.parent_id,
             node_info.token_class,
             node_info.scope_id,
+            node_info.parent_scope_id,
             node_info.type,
-            node_info.word
+            node_info.word,
+            category
         )
 
     def check_variable_declaration(self, node_info, name, scope):
@@ -134,6 +147,13 @@ class SemanticAnalyzer:
                     and node.scope_id == node_info.scope_id
                 ):
                     return "Current"  # Found in the current scope
+                elif (
+                    node.word == name
+                    and node_info.token_id != node.token_id
+                    and node.is_function_parameter()
+                    and node.scope_id == node_info.scope_id
+                ):
+                    return "Parameter" # Matching Function Parameter
 
         # Checking in the immediate parent scope
         parent_scope = self.get_parent_scope(scope)
@@ -159,7 +179,7 @@ class SemanticAnalyzer:
                     node.word == name
                     and node_info.token_id != node.token_id
                     and node.is_function_decl()
-                    and node.scope_id == node_info.scope_id
+                    and node.parent_scope_id == node_info.parent_scope_id
                 ):
                     return "Current"  # Found in the current scope
 
@@ -200,16 +220,17 @@ class SemanticAnalyzer:
         output = []
 
         output.append("\nHash Table Contents:")
-        output.append("=" * 77)
+        output.append("=" * 95)
         output.append(
-            f"{'Node ID':<10} {'Type':<10} {'Word':<15} {'Value':<15} {'Parent ID':<10} {'Token Class':<5}"
+            f"{'Node ID':<10} {'Type':<10} {'Word':<10} {'Value':<15} {'Parent ID':<10} {'Class':<6} {'Real Name':<15} {'Category':<15}"
         )
-        output.append("-" * 77)
+
+        output.append("-" * 95)
 
         for symbol_id, symbol_info in self.symbol_table.items():
             if symbol_info is not None:
                 output.append(symbol_info.print(symbol_id))
 
-        output.append("=" * 77)
+        output.append("=" * 95)
 
         return "\n".join(output)
