@@ -6,12 +6,12 @@ Node ID    Type       Word            Scope      Parent ID  Token ID   Token Cla
 6          num        V_a             0          5          3          V                 main > GLOBVARS > VNAME
 11         num        V_b             0          10         6          V                 main > GLOBVARS > VNAME
 16         text       V_c             0          15         9          V                 main > GLOBVARS > VNAME
-33         num        F_calculate     0          32         16         F                 main > FUNCTIONS > FUNCTION > HEADER > FNAME
-36         undefined  V_d             0          35         18         V                 main > FUNCTIONS > FUNCTION > HEADER > VNAME
-39         undefined  V_e             0          38         20         V                 main > FUNCTIONS > FUNCTION > HEADER > VNAME
-42         undefined  V_f             0          41         22         V                 main > FUNCTIONS > FUNCTION > HEADER > VNAME
-50         num        V_d             1          49         26         V                 main > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-55         num        V_h             1          54         29         V                 main > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-60         text       V_i             1          59         32         V                 main > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-72         undefined  V_a             2          71         38         V                 main > FUNCTIONS > FUNCTION > BODY > ALGO > INSTRUC > COMMAND > ATOMIC > VNAME
+33         num        F_calculate     1          32         16         F                 main > FUNCTIONS > DECL > HEADER > FNAME
+36         undefined  V_d             1          35         18         V                 main > FUNCTIONS > DECL > HEADER > VNAME
+39         undefined  V_e             1          38         20         V                 main > FUNCTIONS > DECL > HEADER > VNAME
+42         undefined  V_f             1          41         22         V                 main > FUNCTIONS > DECL > HEADER > VNAME
+50         num        V_d             1          49         26         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
+55         num        V_h             1          54         29         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
+60         text       V_i             1          59         32         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
+72         undefined  V_a             2          71         38         V                 main > FUNCTIONS > DECL > BODY > ALGO > INSTRUC > COMMAND > ATOMIC > VNAME
 ===============================================================================================================================================================================================================================================

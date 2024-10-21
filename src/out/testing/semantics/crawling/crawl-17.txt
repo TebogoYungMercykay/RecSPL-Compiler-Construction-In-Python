@@ -6,29 +6,12 @@ Node ID    Type       Word            Scope      Parent ID  Token ID   Token Cla
 6          num        V_a             0          5          3          V                 main > GLOBVARS > VNAME
 11         num        V_b             0          10         6          V                 main > GLOBVARS > VNAME
 16         text       V_c             0          15         9          V                 main > GLOBVARS > VNAME
-33         num        F_calculate     0          32         16         F                 main > FUNCTIONS > FUNCTION > HEADER > FNAME
-36         undefined  V_d             0          35         18         V                 main > FUNCTIONS > FUNCTION > HEADER > VNAME
-39         undefined  V_e             0          38         20         V                 main > FUNCTIONS > FUNCTION > HEADER > VNAME
-42         undefined  V_f             0          41         22         V                 main > FUNCTIONS > FUNCTION > HEADER > VNAME
-50         num        V_g             1          49         26         V                 main > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-55         num        V_h             1          54         29         V                 main > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-60         text       V_i             1          59         32         V                 main > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-72         undefined  V_a             2          71         38         V                 main > FUNCTIONS > FUNCTION > BODY > ALGO > INSTRUC > COMMAND > ATOMIC > VNAME
-83         void       F_calculates    1          82         43         F                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > HEADER > FNAME
-86         undefined  V_j             1          85         45         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > HEADER > VNAME
-89         undefined  V_k             1          88         47         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > HEADER > VNAME
-92         undefined  V_l             1          91         49         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > HEADER > VNAME
-100        num        V_a             2          99         53         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-105        text       V_n             2          104        56         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-110        text       V_o             2          109        59         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-122        undefined  V_m             3          121        65         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > ALGO > INSTRUC > COMMAND > ATOMIC > VNAME
-133        void       F_calculated    2          132        70         F                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > HEADER > FNAME
-136        undefined  V_p             2          135        72         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > HEADER > VNAME
-139        undefined  V_q             2          138        74         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > HEADER > VNAME
-142        undefined  V_r             2          141        76         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > HEADER > VNAME
-150        num        V_m             3          149        80         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-155        text       V_t             3          154        83         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-160        text       V_u             3          159        86         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-172        undefined  V_m             4          171        92         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > ALGO > INSTRUC > COMMAND > ATOMIC > VNAME
-178        undefined  V_g             4          177        95         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > ALGO > INSTRUC > COMMAND > ATOMIC > VNAME
+33         num        F_calculate     1          32         16         F                 main > FUNCTIONS > DECL > HEADER > FNAME
+36         undefined  V_d             1          35         18         V                 main > FUNCTIONS > DECL > HEADER > VNAME
+39         undefined  V_e             1          38         20         V                 main > FUNCTIONS > DECL > HEADER > VNAME
+42         undefined  V_f             1          41         22         V                 main > FUNCTIONS > DECL > HEADER > VNAME
+50         num        V_g             1          49         26         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
+55         num        V_h             1          54         29         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
+60         text       V_i             1          59         32         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
+72         undefined  V_p             2          71         38         V                 main > FUNCTIONS > DECL > BODY > ALGO > INSTRUC > COMMAND > ATOMIC > VNAME
 ===============================================================================================================================================================================================================================================

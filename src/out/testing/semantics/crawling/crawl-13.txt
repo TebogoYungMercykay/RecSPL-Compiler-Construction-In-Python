@@ -6,29 +6,29 @@ Node ID    Type       Word            Scope      Parent ID  Token ID   Token Cla
 6          num        V_a             0          5          3          V                 main > GLOBVARS > VNAME
 11         num        V_b             0          10         6          V                 main > GLOBVARS > VNAME
 16         text       V_c             0          15         9          V                 main > GLOBVARS > VNAME
-33         num        F_calculate     0          32         16         F                 main > FUNCTIONS > FUNCTION > HEADER > FNAME
-36         undefined  V_d             0          35         18         V                 main > FUNCTIONS > FUNCTION > HEADER > VNAME
-39         undefined  V_e             0          38         20         V                 main > FUNCTIONS > FUNCTION > HEADER > VNAME
-42         undefined  V_f             0          41         22         V                 main > FUNCTIONS > FUNCTION > HEADER > VNAME
-50         num        V_g             1          49         26         V                 main > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-55         num        V_h             1          54         29         V                 main > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-60         text       V_i             1          59         32         V                 main > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-72         undefined  V_a             2          71         38         V                 main > FUNCTIONS > FUNCTION > BODY > ALGO > INSTRUC > COMMAND > ATOMIC > VNAME
-83         void       F_calculates    1          82         43         F                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > HEADER > FNAME
-86         undefined  V_j             1          85         45         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > HEADER > VNAME
-89         undefined  V_k             1          88         47         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > HEADER > VNAME
-92         undefined  V_l             1          91         49         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > HEADER > VNAME
-100        num        V_m             2          99         53         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-105        text       V_n             2          104        56         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-110        text       V_o             2          109        59         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-122        undefined  V_g             3          121        65         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > ALGO > INSTRUC > COMMAND > ATOMIC > VNAME
-128        undefined  V_m             3          127        68         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > ALGO > INSTRUC > COMMAND > ATOMIC > VNAME
-139        void       F_calculated    2          138        73         F                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > HEADER > FNAME
-142        undefined  V_p             2          141        75         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > HEADER > VNAME
-145        undefined  V_q             2          144        77         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > HEADER > VNAME
-148        undefined  V_r             2          147        79         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > HEADER > VNAME
-156        num        V_s             3          155        83         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-161        text       V_t             3          160        86         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-166        text       V_u             3          165        89         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > LOCVARS > VNAME
-178        undefined  V_a             4          177        95         V                 main > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > FUNCTIONS > FUNCTION > BODY > ALGO > INSTRUC > COMMAND > ATOMIC > VNAME
+33         num        F_calculate     1          32         16         F                 main > FUNCTIONS > DECL > HEADER > FNAME
+36         undefined  V_d             1          35         18         V                 main > FUNCTIONS > DECL > HEADER > VNAME
+39         undefined  V_e             1          38         20         V                 main > FUNCTIONS > DECL > HEADER > VNAME
+42         undefined  V_f             1          41         22         V                 main > FUNCTIONS > DECL > HEADER > VNAME
+50         num        V_g             1          49         26         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
+55         num        V_h             1          54         29         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
+60         text       V_i             1          59         32         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
+72         undefined  V_a             2          71         38         V                 main > FUNCTIONS > DECL > BODY > ALGO > INSTRUC > COMMAND > ATOMIC > VNAME
+83         void       F_calculates    2          82         43         F                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > HEADER > FNAME
+86         undefined  V_j             2          85         45         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > HEADER > VNAME
+89         undefined  V_k             2          88         47         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > HEADER > VNAME
+92         undefined  V_l             2          91         49         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > HEADER > VNAME
+100        num        V_m             2          99         53         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
+105        text       V_n             2          104        56         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
+110        text       V_o             2          109        59         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
+122        undefined  V_g             3          121        65         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > ALGO > INSTRUC > COMMAND > ATOMIC > VNAME
+128        undefined  V_m             3          127        68         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > ALGO > INSTRUC > COMMAND > ATOMIC > VNAME
+139        void       F_calculated    3          138        73         F                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > HEADER > FNAME
+142        undefined  V_p             3          141        75         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > HEADER > VNAME
+145        undefined  V_q             3          144        77         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > HEADER > VNAME
+148        undefined  V_r             3          147        79         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > HEADER > VNAME
+156        num        V_p             3          155        83         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
+161        text       V_t             3          160        86         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
+166        text       V_u             3          165        89         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
+178        undefined  V_a             4          177        95         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > ALGO > INSTRUC > COMMAND > ATOMIC > VNAME
 ===============================================================================================================================================================================================================================================
