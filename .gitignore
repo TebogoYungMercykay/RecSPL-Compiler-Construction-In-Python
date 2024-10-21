@@ -163,8 +163,9 @@ cython_debug/
 
 
 # Testing MISC
-test_fail.txt
-test_pass.txt
+# test_fail.txt
+# test_pass.txt
+test_*.txt
 */material/
 material/*
 
