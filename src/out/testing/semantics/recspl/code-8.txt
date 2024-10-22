@@ -1,0 +1,14 @@
+main
+num V_a, num V_b, text V_c,
+begin
+    skip;
+end
+num F_calculate(V_d, V_e, V_f)
+{
+    num V_g, num V_h, text V_i,
+    begin
+        skip;
+        F_calculated(V_v, V_w, V_x);
+    end
+}
+end

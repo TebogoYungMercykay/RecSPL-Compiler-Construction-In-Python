@@ -1,37 +1,16 @@
 
 Hash Table Contents:
-=============================================================================
-Node ID    Type       Word            Value           Parent ID  Token Class
------------------------------------------------------------------------------
-6          num        v1              undefined       5          V
-11         num        v2              undefined       10         V
-16         text       v3              undefined       15         V
-188        num        f1              undefined       187        F
-758        void       f2              undefined       757        F
-205        num        v4              undefined       204        V
-210        num        v5              undefined       209        V
-215        text       v6              undefined       214        V
-362        num        f3              undefined       361        F
-538        void       f4              undefined       537        F
-775        num        v7              undefined       774        V
-780        text       v8              undefined       779        V
-785        text       v9              undefined       784        V
-865        num        f5              undefined       864        F
-379        num        v10             undefined       378        V
-384        num        v11             undefined       383        V
-389        text       v12             undefined       388        V
-555        num        v13             undefined       554        V
-560        text       v14             undefined       559        V
-565        text       v15             undefined       564        V
-645        void       f6              undefined       644        F
-882        num        v16             undefined       881        V
-887        num        v17             undefined       886        V
-892        text       v18             undefined       891        V
-1039       num        f7              undefined       1038       F
-662        num        v19             undefined       661        V
-667        text       v20             undefined       666        V
-672        text       v21             undefined       671        V
-1056       num        v22             undefined       1055       V
-1061       text       v23             undefined       1060       V
-1066       text       v24             undefined       1065       V
-=============================================================================
+===============================================================================================
+Node ID    Type       Word       Value           Parent ID  Class  Real Name       Category       
+-----------------------------------------------------------------------------------------------
+6          num        v1         undefined       5          V      V_a             declaration    
+11         num        v2         undefined       10         V      V_b             declaration    
+16         text       v3         undefined       15         V      V_c             declaration    
+33         num        f1         undefined       32         F      F_calculate     declaration    
+36         undefined  v4         undefined       35         V      V_d             parameter      
+39         undefined  v5         undefined       38         V      V_e             parameter      
+42         undefined  v6         undefined       41         V      V_f             parameter      
+50         num        v7         undefined       49         V      V_g             declaration    
+55         num        v8         undefined       54         V      V_h             declaration    
+60         text       v9         undefined       59         V      V_i             declaration    
+===============================================================================================

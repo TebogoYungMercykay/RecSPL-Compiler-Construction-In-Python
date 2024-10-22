@@ -1,0 +1,5 @@
+main
+num V_r, num V_y, text V_message,
+begin
+    print V_r;
+end

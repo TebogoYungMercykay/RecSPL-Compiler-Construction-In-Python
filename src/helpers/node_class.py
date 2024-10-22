@@ -11,6 +11,7 @@ class NodeInfo:
         token_id,
         token_class,
         scope_id,
+        parent_scope_id,
         type="undefined",
         data="undefined",
     ):
@@ -22,6 +23,7 @@ class NodeInfo:
         self.scope = scope
         self.word = word
         self.scope_id = scope_id
+        self.parent_scope_id = parent_scope_id
         self.type = type
         self.data = data
 
@@ -52,6 +54,14 @@ class NodeInfo:
             and self.word.startswith("V_")
             and self.type != "undefined"
         )
+    
+    def is_function_parameter(self):
+        return (
+            self.token_class == "V"
+            and "HEADER" in self.classes
+            and self.word.startswith("V_")
+            and self.type == "undefined"
+        )
 
     def print(self, node_id):
         if self.node_id != node_id:
@@ -72,8 +82,10 @@ class SymbolInfo:
         parent_id,
         token_class,
         scope_id,
+        parent_scope_id,
         type_info,
         old,
+        category,
         data="undefined",
     ):
         self.parent_id = parent_id
@@ -81,9 +93,11 @@ class SymbolInfo:
         self.token_class = token_class
         self.word = word
         self.scope_id = scope_id
+        self.parent_scope_id = parent_scope_id
         self.type = type_info
         self.data = data
         self.old = old
+        self.category = category
 
     def update_symbol(self, name, scope_id, new_data, old):
         if name == self.word and scope_id == self.scope_id and self.old == old:
@@ -112,9 +126,17 @@ class SymbolInfo:
             and self.word.startswith("V_")
             and self.type != "undefined"
         )
+        
+    def is_function_parameter(self):
+        return (
+            self.token_class == "V"
+            and "HEADER" in self.classes
+            and self.word.startswith("V_")
+            and self.type == "undefined"
+        )
 
     def print(self, node_id):
         if self.node_id != node_id:
             return f"Incorrect Node ID: {node_id}."
 
-        return f"{self.node_id:<10} {self.type:<10} {self.word:<15} {self.data:<15} {self.parent_id:<10} {self.token_class}"
+        return f"{self.node_id:<10} {self.type:<10} {self.word:<10} {self.data:<15} {self.parent_id:<10} {self.token_class:<6} {self.old:<15} {self.category:<15}"

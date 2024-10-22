@@ -855,7 +855,7 @@
         <IN>
             <PARENT>182</PARENT>
             <UNID>183</UNID>
-            <SYMB>FUNCTION</SYMB>
+            <SYMB>DECL</SYMB>
             <CHILDREN>
                 <ID>184</ID>
                 <ID>199</ID>
@@ -1666,7 +1666,7 @@
         <IN>
             <PARENT>356</PARENT>
             <UNID>357</UNID>
-            <SYMB>FUNCTION</SYMB>
+            <SYMB>DECL</SYMB>
             <CHILDREN>
                 <ID>358</ID>
                 <ID>373</ID>
@@ -2481,7 +2481,7 @@
         <IN>
             <PARENT>356</PARENT>
             <UNID>533</UNID>
-            <SYMB>FUNCTION</SYMB>
+            <SYMB>DECL</SYMB>
             <CHILDREN>
                 <ID>534</ID>
                 <ID>549</ID>
@@ -2974,7 +2974,7 @@
         <IN>
             <PARENT>639</PARENT>
             <UNID>640</UNID>
-            <SYMB>FUNCTION</SYMB>
+            <SYMB>DECL</SYMB>
             <CHILDREN>
                 <ID>641</ID>
                 <ID>656</ID>
@@ -3484,7 +3484,7 @@
         <IN>
             <PARENT>182</PARENT>
             <UNID>753</UNID>
-            <SYMB>FUNCTION</SYMB>
+            <SYMB>DECL</SYMB>
             <CHILDREN>
                 <ID>754</ID>
                 <ID>769</ID>
@@ -3977,7 +3977,7 @@
         <IN>
             <PARENT>859</PARENT>
             <UNID>860</UNID>
-            <SYMB>FUNCTION</SYMB>
+            <SYMB>DECL</SYMB>
             <CHILDREN>
                 <ID>861</ID>
                 <ID>876</ID>
@@ -4787,7 +4787,7 @@
         <IN>
             <PARENT>1033</PARENT>
             <UNID>1034</UNID>
-            <SYMB>FUNCTION</SYMB>
+            <SYMB>DECL</SYMB>
             <CHILDREN>
                 <ID>1035</ID>
                 <ID>1050</ID>

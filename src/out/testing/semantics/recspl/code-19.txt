@@ -1,0 +1,5 @@
+main
+num V_a, num V_b, text V_a,
+begin
+    skip;
+end

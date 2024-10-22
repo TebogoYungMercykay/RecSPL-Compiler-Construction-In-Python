@@ -2,7 +2,7 @@ from lexer import Lexer
 
 
 def lexing(lexer_filepath, code_filename):
-    print("--- Lexing The RecSPL Code ---")
+    print("\n--- Lexing The RecSPL Code ---")
     print("----------------------------------")
 
     # Insert Code Below for Testing The Lexer
