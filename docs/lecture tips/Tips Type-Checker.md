@@ -22,12 +22,6 @@ The type checker's semantic rules are attributed to their corresponding grammar 
 
 ### Grammar and Type-Checking Rules
 
-**Program Structure**
-
-```
-PROG ::= main GLOBVARS ALGO FUNCTIONS
-```
-
 **Type-Checking for Programs**
 
 ```
