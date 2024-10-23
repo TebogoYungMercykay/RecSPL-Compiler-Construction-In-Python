@@ -256,3 +256,23 @@ class TypeChecker:
             print(f"Error in Type COMMAND: {str(e)}")
 
         return False
+
+    def typecheck_atomic(self, node):
+        if len(node["children"]) < 1:
+            return False
+        
+        try:
+            children = node["children"]
+            atomic = self.find_node_by_id(children[0])
+            
+            if "symbol" in atomic and atomic["symbol"] == "VNAME":
+                return self.typecheck_vtyp(atomic)
+            elif "symbol" in atomic and atomic["symbol"] == "CONST":
+                return self.typecheck_const(atomic)
+            else:
+                return False
+
+        except Exception as e:
+            print(f"Error in Type ATOMIC: {str(e)}")
+
+        return False
