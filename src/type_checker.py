@@ -339,3 +339,31 @@ class TypeChecker:
             print(f"Error in Type TERM: {str(e)}")
 
         return 'u'
+
+    def typecheck_op(self, node):
+        try:
+            op = self.find_node_by_id(node["children"][0])
+            if "symbol" in op and op["symbol"] == "UNOP" and len(op["children"]) == 4:
+                arg = self.find_node_by_id(op["children"][2])
+                if arg is None:
+                    return 'u'
+                if self.typecheck_unop(op) == self.typecheck_arg(arg) == 'b':
+                    return 'b'
+                elif self.typecheck_unop(op) == self.typecheck_arg(arg) == 'n':
+                    return 'n'
+            elif "symbol" in op and op["symbol"] == "BINOP" and len(op["children"]) == 6:
+                arg1 = self.find_node_by_id(op["children"][2])
+                arg2 = self.find_node_by_id(op["children"][4])
+                if arg1 is None or arg2 is None:
+                    return 'u'
+                elif self.typecheck_binop(op) == self.typecheck_arg(arg1) == self.typecheck_arg(arg2) == 'b':
+                    return 'b'
+                elif self.typecheck_binop(op) == self.typecheck_arg(arg1) == self.typecheck_arg(arg2) == 'n':
+                    return 'n'
+                elif self.typecheck_binop(op) == 'c' and (self.typecheck_arg(arg1) == self.typecheck_arg(arg2) == 'n'):
+                    return 'b'
+        except Exception as e:
+            print(f"Error in Type OP: {str(e)}")
+
+        return 'u'
+
