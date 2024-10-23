@@ -407,3 +407,15 @@ class TypeChecker:
 
         return 'u'
 
+    def typecheck_cond(self, node):
+        try:
+            arg = self.find_node_by_id(node["children"][0])
+            if "symbol" in arg and arg["symbol"] == "SIMPLE":
+                return self.typecheck_simple(arg)
+            elif "symbol" in arg and arg["symbol"] == "COMPOSIT":
+                return self.typecheck_composit(arg)
+        except Exception as e:
+            print(f"Error in Type COND: {str(e)}")
+
+        return 'u'
+    
