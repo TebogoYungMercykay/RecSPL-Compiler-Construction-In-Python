@@ -27,6 +27,39 @@ class NodeInfo:
         self.type = type
         self.data = data
 
+    def get_node_id(self):
+        return self.node_id
+
+    def get_classes(self):
+        return self.classes
+
+    def get_word(self):
+        return self.word
+
+    def get_scope(self):
+        return self.scope
+
+    def get_parent_id(self):
+        return self.parent_id
+
+    def get_token_id(self):
+        return self.token_id
+
+    def get_token_class(self):
+        return self.token_class
+
+    def get_scope_id(self):
+        return self.scope_id
+
+    def get_parent_scope_id(self):
+        return self.parent_scope_id
+
+    def get_type(self):
+        return self.type
+
+    def get_data(self):
+        return self.data
+
     def update_symbol(self, name, scope_id, new_data):
         if name == self.word and scope_id == self.scope_id:
             self.data = new_data
@@ -98,6 +131,36 @@ class SymbolInfo:
         self.data = data
         self.old = old
         self.category = category
+
+    def get_node_id(self):
+        return self.node_id
+
+    def get_word(self):
+        return self.word
+
+    def get_parent_id(self):
+        return self.parent_id
+
+    def get_token_class(self):
+        return self.token_class
+
+    def get_scope_id(self):
+        return self.scope_id
+
+    def get_parent_scope_id(self):
+        return self.parent_scope_id
+
+    def get_type(self):
+        return self.type
+
+    def get_data(self):
+        return self.data
+
+    def get_old(self):
+        return self.old
+
+    def get_category(self):
+        return self.category
 
     def update_symbol(self, name, scope_id, new_data, old):
         if name == self.word and scope_id == self.scope_id and self.old == old:
