@@ -437,3 +437,25 @@ class TypeChecker:
 
         return 'u'
 
+    def typecheck_composit(self, node):
+        try:
+            op = self.find_node_by_id(node["children"][0])
+            if "symbol" in op and op["symbol"] == "BINOP" and len(op["children"]) == 6:
+                simple1 = self.find_node_by_id(op["children"][2])
+                simple2 = self.find_node_by_id(op["children"][4])
+                
+                if simple1 is None or simple2 is None:
+                    return 'u'
+
+                if self.typecheck_binop(op) == self.typecheck_simple(simple1) == self.typecheck_simple(simple2) == 'b':
+                    return 'b'
+            elif "symbol" in op and op["symbol"] == "UNOP" and len(op["children"]) == 4:
+                simple = self.find_node_by_id(op["children"][2])
+                if simple is None:
+                    return 'u'
+                elif self.typecheck_binop(op) == self.typecheck_simple(simple) == 'b':
+                    return 'b'
+        except Exception as e:
+            print(f"Error in Type COMPOSIT: {str(e)}")
+
+        return 'u'
