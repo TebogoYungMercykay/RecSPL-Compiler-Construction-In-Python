@@ -97,9 +97,6 @@ class NodeInfo:
         )
 
     def print(self, node_id):
-        if self.node_id != node_id:
-            return f"Incorrect Node ID: {node_id}."
-
         class_str = " > ".join(self.classes)
         if len(class_str) > 149:
             class_str = class_str[:146] + "..."
@@ -199,7 +196,4 @@ class SymbolInfo:
         )
 
     def print(self, node_id):
-        if self.node_id != node_id:
-            return f"Incorrect Node ID: {node_id}."
-
         return f"{self.node_id:<10} {self.type:<10} {self.word:<10} {self.data:<15} {self.parent_id:<10} {self.token_class:<6} {self.old:<15} {self.category:<15}"
