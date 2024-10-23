@@ -130,3 +130,31 @@ class TypeChecker:
             return 'v'
         else:
             return 'u'
+
+    def typecheck_vname(self, node):
+        children = node["children"]
+        vname_node = self.find_node_by_id(children[0])
+
+        if not vname_node or "token" not in vname_node:
+            return False
+        
+        return vname_node["token"]["class"]
+        
+    def typecheck_fname(self, node):
+        children = node["children"]
+        fname_node = self.find_node_by_id(children[0])
+
+        if not fname_node or "token" not in fname_node:
+            return False
+        
+        return fname_node["token"]["class"]
+    
+    def typecheck_const(self, node):
+        children = node["children"]
+        const_node = self.find_node_by_id(children[0])
+
+        if not const_node or "token" not in const_node:
+            return False
+        
+        return const_node["token"]["class"].lower()
+
