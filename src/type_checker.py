@@ -459,3 +459,22 @@ class TypeChecker:
             print(f"Error in Type COMPOSIT: {str(e)}")
 
         return 'u'
+
+    def typecheck_branch(self, node):
+        try:
+            if "symbol" in node and node["symbol"] == "BRANCH" and len(node["children"]) == 6:
+                cond = self.find_node_by_id(node["children"][1])
+                algo1 = self.find_node_by_id(node["children"][3])
+                algo2 = self.find_node_by_id(node["children"][5])
+                
+                if cond is None or algo1 is None or algo2 is None:
+                    return False
+
+                if self.typecheck_cond(cond) == 'b':
+                    return (self.typecheck_algo(algo1) and self.typecheck_algo(algo2))
+                else:
+                    return False
+        except Exception as e:
+            print(f"Error in Type BRANCH: {str(e)}")
+
+        return False
