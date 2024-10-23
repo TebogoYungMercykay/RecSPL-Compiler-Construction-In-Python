@@ -39,3 +39,33 @@ class TypeChecker:
 
         return None
     
+    def check_types(self):
+        try:
+            if self.symbols is not None and self.syntax_tree is not None:
+                node = self.syntax_tree.root
+                if (
+                    "symbol" in node and node["symbol"] == "main"
+                    and "parent" not in node and "children" in node
+                ):
+                    return self.typecheck_prog(node)
+        except Exception as e:
+            print(f"Error in Type ROOT: {str(e)}")
+
+        return False
+
+    def typecheck_prog(self, node):
+        if len(node["children"]) != 3 or node["symbol"] != "main":
+            raise TypeError("Invalid PROG structure")
+
+        try:
+            children = node["children"]
+            return (
+                self.typecheck_globvars(self.find_node_by_id(children[0]))
+                and self.typecheck_algo(self.find_node_by_id(children[1]))
+                and self.typecheck_functions(self.find_node_by_id(children[2]))
+            )
+        except Exception as e:
+            print(f"Error in Type PROG: {str(e)}")
+
+        return False
+
