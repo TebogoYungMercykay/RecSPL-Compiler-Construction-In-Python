@@ -301,3 +301,23 @@ class TypeChecker:
 
         return False
 
+    """
+    # TODO: Test Code => typecheck_term
+    V_aa = not(V_aa);
+    V_ac = "Hello";
+    """
+    def typecheck_term(self, node):
+        try:
+            child = self.find_node_by_id(node["children"][0])
+            if child is not None:
+                if child["symbol"] == "ATOMIC":
+                    return self.typecheck_atomic(child)
+                elif child["symbol"] == "CALL":
+                    return self.typecheck_call(child)
+                elif child["symbol"] == "OP":
+                    return self.typecheck_op(child)
+
+        except Exception as e:
+            print(f"Error in Type TERM: {str(e)}")
+
+        return 'u'
