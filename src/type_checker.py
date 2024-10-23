@@ -551,3 +551,29 @@ class TypeChecker:
 
         return False
 
+    def typecheck_body(self, node):
+        try:
+            children = node["children"]
+            if "symbol" in node and node["symbol"] == "BODY" and len(children) == 6:
+                prolog = self.find_node_by_id(children[0])
+                locvars = self.find_node_by_id(children[1])
+                algo = self.find_node_by_id(children[2])
+                epilog = self.find_node_by_id(children[3])
+                subfunctions = self.find_node_by_id(children[4])
+                endnode = self.find_node_by_id(children[5])
+                if (
+                    prolog is None or locvars is None or algo is None or 
+                    epilog is None or subfunctions is None or endnode is None
+                ):
+                    return False
+                
+                return (
+                    self.typecheck_prolog(prolog) and self.typecheck_locvars(locvars) and
+                    self.typecheck_algo(algo) and self.typecheck_epilog(epilog) and
+                    self.typecheck_subfuncs(subfunctions) and endnode["token"]["word"] == 'end'
+                )
+        except Exception as e:
+            print(f"Error in Type FUNCTIONS: {str(e)}")
+
+        return False
+
