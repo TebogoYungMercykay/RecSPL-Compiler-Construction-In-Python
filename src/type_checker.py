@@ -185,3 +185,31 @@ class TypeChecker:
         
         return False
 
+    def typecheck_instruc(self, node):
+        if len(node["children"]) < 1:
+            return False
+        
+        try:
+            children = node["children"]
+            for i in range(0, len(children), 2):
+                if i >= len(children):
+                    break
+                
+                command = self.find_node_by_id(children[i])
+                if not command:
+                    return False
+                
+                if not self.typecheck_command(command):
+                    return False
+                
+                semicolon = self.find_node_by_id(children[i + 1])
+                if not semicolon or "token" not in semicolon or semicolon["token"]["word"] != ";":
+                    return False
+
+            return True
+            
+        except Exception as e:
+            print(f"Error in Type INSTRUC: {str(e)}")
+
+        return False
+
