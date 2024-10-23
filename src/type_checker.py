@@ -276,3 +276,28 @@ class TypeChecker:
             print(f"Error in Type ATOMIC: {str(e)}")
 
         return False
+
+    def typecheck_assign(self, node):
+        if len(node["children"]) < 3:
+            return False
+        
+        try:
+            vname = self.find_node_by_id(node["children"][0])
+            op = self.find_node_by_id(node["children"][1])
+            
+            if vname is None or op is None:
+                return False
+            
+            if "token" in op:
+                if op["token"]["word"] == "<":
+                    vtype = f"{self.typecheck_vtyp(vname)}"
+                    return vtype == 'n'
+                else:
+                    val = self.find_node_by_id(node["children"][2])
+                    return val is not None and self.typecheck_vtyp(vname) == self.typecheck_term(val)
+
+        except Exception as e:
+            print(f"Error in Type ASSIGN: {str(e)}")
+
+        return False
+
