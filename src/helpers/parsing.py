@@ -23,10 +23,10 @@ def parsing(lexer_filepath, parser_filepath):
         print("\033[92mParsing successful.\033[0m")
         print("----------------------------------\n\n")
 
-        return True
+        return syntax_tree
 
     except SyntaxError as e:
         print(f"Parsing failed: {e}")
         print("----------------------------------\n\n")
 
-        return False
+        return None
