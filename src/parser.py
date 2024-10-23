@@ -520,3 +520,6 @@ class Parser:
     def add_empty_node(self, parent_node):
         """Empty node to represent epsilon transitions"""
         self.syntax_tree.add_inner_node(parent_node, "ε")
+        
+    def get_syntax_tree(self):
+        return self.syntax_tree
