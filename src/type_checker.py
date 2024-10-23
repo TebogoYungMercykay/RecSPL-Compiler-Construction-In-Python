@@ -478,3 +478,25 @@ class TypeChecker:
             print(f"Error in Type BRANCH: {str(e)}")
 
         return False
+
+    def typecheck_functions(self, node):
+        try:
+            if "symbol" in node and node["symbol"] == "FUNCTIONS":
+                children = node["children"]
+                for i in range (0, len(children)):
+                    if i >= len(children):
+                        break
+                    
+                    decl = self.find_node_by_id(children[i])
+                    if decl is None:
+                        return False
+
+                    if not self.typecheck_decl(decl):
+                        return False
+
+                return True
+        except Exception as e:
+            print(f"Error in Type FUNCTIONS: {str(e)}")
+
+        return False
+
