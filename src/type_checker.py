@@ -530,3 +530,24 @@ class TypeChecker:
     def typecheck_epilog(self, node):
         return "token" in node and node["token"]["word"] == "}"
 
+    def typecheck_header(self, node):
+        try:
+            ftyp = self.find_node_by_id(node["children"][0])
+            fname = self.find_node_by_id(node["children"][1])
+            vone = self.find_node_by_id(node["children"][3])
+            vtwo = self.find_node_by_id(node["children"][5])
+            vthree = self.find_node_by_id(node["children"][7])
+            
+            if (
+                ftyp is not None and fname is None or vone
+                is None or vtwo is None or vthree is None
+            ):
+                return False
+            
+            return self.typecheck_vtyp(vone) == self.typecheck_vtyp(vtwo) == self.typecheck_vtyp(vthree) == 'n'
+
+        except Exception as e:
+            print(f"Error in Type HEADER: {str(e)}")
+
+        return False
+
