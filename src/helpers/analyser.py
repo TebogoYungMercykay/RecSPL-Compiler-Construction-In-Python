@@ -27,11 +27,11 @@ def analyser(parser_filepath, crawling_filepath, semantics_filepath):
         print("\033[92mSemantic Analysis successful.\033[0m")
         print("----------------------------------\n\n")
 
-        return True
+        return semantic_an.get_symbol_table()
     except Exception as e:
         print(f"Error Occurred: {str(e)}")
 
-    return False
+    return None
 
 
 def semantics(parser_filepath, write_to, semantics_filepath):
