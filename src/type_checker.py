@@ -321,3 +321,21 @@ class TypeChecker:
             print(f"Error in Type TERM: {str(e)}")
 
         return 'u'
+
+    def typecheck_call(self, node):
+        try:
+            fname = self.find_node_by_id(node["children"][0])
+            vone = self.find_node_by_id(node["children"][2])
+            vtwo = self.find_node_by_id(node["children"][4])
+            vthree = self.find_node_by_id(node["children"][6])
+            
+            if fname is None or vone is None or vtwo is None or vthree is None:
+                return 'u'
+            
+            if self.typecheck_atomic(vone) == self.typecheck_atomic(vtwo) == self.typecheck_atomic(vthree) == 'n':
+                return self.typecheck_ftyp(fname)
+
+        except Exception as e:
+            print(f"Error in Type TERM: {str(e)}")
+
+        return 'u'
