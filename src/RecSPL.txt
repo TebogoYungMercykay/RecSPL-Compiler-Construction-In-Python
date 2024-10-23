@@ -1,140 +1,30 @@
 main
-num V_aa, num V_ab, text V_ac,
+num V_a, num V_b, text V_c,
 begin
-    V_aa < input;
-    V_aa = not(V_aa);
-    V_ab = add(V_aa, 5);
-    V_ac = "Hello";
-    if div(add(3,4), grt(3,4)) then
-        begin
-            print V_ac;
-            print V_ab;
-        end
-    else
-        begin
-            V_ab = mul(V_ab, 2);
-            print V_ab;
-        end;
-    F_aa(V_aa, V_ab, V_ac);
+    skip;
 end
-num F_aa(V_ad, V_ae, V_af)
+num F_calculate(V_d, V_e, V_f)
+{
+    num V_g, num V_h, text V_i,
+    begin
+        skip;
+        F_calculates(V_g, V_h, V_i);
+    end
+}
+    void F_calculates(V_j, V_k, V_l)
     {
-        num V_ag, num V_ah, text V_ai,
+        num V_m, text V_n, text V_o,
         begin
-            V_ah = add(V_ad, V_ae);
-            V_ag = div(V_ah, 2);
-            if eq(V_ag, 10) then
-                begin
-                    V_ai = "Equal";
-                end
-            else
-                begin
-                    V_ai = "Notequal";
-                end;
-            print V_af;
-            print V_ai;
-            print V_ag;
-            F_aa(V_ag, V_ab, V_ac);
-            return V_ag;
+            skip;
         end
     }
-    num F_ab(V_aj, V_ak, V_al)
+        void F_calculated(V_p, V_q, V_r)
         {
-            num V_am, num V_an, text V_ao,
+            num V_s, text V_t, text V_u,
             begin
-                V_an = add(V_aj, V_ak);
-                V_am = div(V_an, 2);
-                if eq(V_am, 10) then
-                    begin
-                        V_ai = "Equal";
-                    end
-                else
-                    begin
-                        V_ai = "Notequal";
-                    end;
-                print V_al;
-                print V_ai;
-                print V_ag;
-                F_aa(V_ag, V_ab, V_ac);
-                return V_ag;
+                skip;
             end
         }
-        end
-    void F_ac(V_ap, V_aq, V_ar)
-        {
-            num V_as, text V_at, text V_au,
-            begin
-                V_aa = or(V_ap, V_aq);
-                V_at = add("Result", V_aa);
-                print V_at;
-                F_ac(V_ad, V_ae, V_ar);
-            end
-        }
-        void F_aa(V_av, V_aw, V_ax)
-            {
-                num V_ay, text V_az, text V_ba,
-                begin
-                    V_aa = or(V_av, V_aw);
-                    V_at = add("Result", V_aa);
-                    print V_at;
-                    F_ac(V_ad, V_ae, V_ax);
-                end
-            }
-            end
         end
     end
-void F_ae(V_bb, V_bc, V_bd)
-    {
-        num V_be, text V_bf, text V_bg,
-        begin
-            V_aa = or(V_bb, V_bc);
-            V_at = add("Result", V_aa);
-            print V_at;
-            F_ac(V_ad, V_ae, V_bd);
-        end
-    }
-    num F_af(V_bh, V_bi, V_bj)
-        {
-            num V_bk, num V_bl, text V_bm,
-            begin
-                V_ah = add(V_bh, V_bi);
-                V_ag = div(V_ah, 2);
-                if eq(V_ag, 10) then
-                    begin
-                        V_ai = "Equal";
-                    end
-                else
-                    begin
-                        V_ai = "Notequal";
-                    end;
-                print V_bj;
-                print V_ai;
-                print V_ag;
-                F_aa(V_ag, V_ab, V_ac);
-                return V_ag;
-            end
-        }
-        num F_ag(V_bn, V_bo, V_bp)
-            {
-                num V_bq, text V_br, text V_bs,
-                begin
-                    V_ah = add(V_bn, V_bo);
-                    V_ag = div(V_ah, 2);
-                    if eq(V_ag, 10) then
-                        begin
-                            V_ai = "Equal";
-                        end
-                    else
-                        begin
-                            V_ai = "Notequal";
-                        end;
-                    print V_bp;
-                    print V_ai;
-                    print V_ag;
-                    F_aa(V_ag, V_ab, V_ac);
-                    return V_ag;
-                end
-            }
-            end
-        end
-    end
+end
