@@ -213,3 +213,46 @@ class TypeChecker:
 
         return False
 
+    def typecheck_command(self, node):
+        if len(node["children"]) < 1:
+            return False
+        
+        try:
+            children = node["children"]
+            command = self.find_node_by_id(children[0])
+            
+            if ("token" in command and command["token"]["word"] in ["skip", "halt"]):
+                return True
+            else:
+                if "token" in command and command["token"]["word"] == "print":
+                    atomic = self.find_node_by_id(children[1])
+                    if atomic is None:
+                        return False
+                    return self.typecheck_atomic(atomic) in ("n", "t")
+                elif "token" in command and command["token"]["word"] == "return":
+                    # TODO: Double Check
+                    decl = self.find_decl_ancestor(children[1])
+                    if decl is None:
+                        return False
+
+                    header = self.find_node_by_id(decl["children"][0])
+                    f_type = self.find_node_by_id(header["children"][0])
+                    ftype = self.find_node_by_id(f_type["children"][0])["token"]["word"]
+                    
+                    atomic = self.find_node_by_id(children[1])
+                    if atomic is None:
+                        return False
+
+                    return self.typecheck_atomic(atomic) == ftype == 'n'
+                else:
+                    if command["symbol"] == "ASSIGN":
+                        return self.typecheck_assign(command)
+                    elif command["symbol"] == "CALL":
+                        return self.typecheck_call(command) == 'v'
+                    elif command["symbol"] == "BRANCH":
+                        return self.typecheck_branch(command)
+
+        except Exception as e:
+            print(f"Error in Type COMMAND: {str(e)}")
+
+        return False
