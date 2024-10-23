@@ -16,8 +16,8 @@ class Symbols:
         if visited_scopes is None:
             visited_scopes = set()
 
-        node_info = self.node_table.get(node_id)
-
+        node_info = self.node_table.get(f"{node_id}")
+        
         if not node_info:
             print(f"No node info found for node ID: {node_id}")
             return None
@@ -91,6 +91,7 @@ class Symbols:
 
     def get_type(self, node_id):
         symbol_info = self.get_symbol_info(node_id)
+        print("Info: ", symbol_info)
         return symbol_info.get_type() if symbol_info else None
 
     def get_class(self, node_id):
