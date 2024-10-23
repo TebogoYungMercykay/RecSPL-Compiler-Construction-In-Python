@@ -17,7 +17,7 @@ def analyser(parser_filepath, crawling_filepath, semantics_filepath):
         print(f"Table for the Tree-Crawling Algorithm saved to {crawling_filepath}")
 
         # Example Usage
-        semantic_an = SemanticAnalyzer(parser_filepath)
+        semantic_an = SemanticAnalyzer(parser_filepath, analyzer.get_node_table().items())
         semantic_an.analyze()  # Start the semantic analysis
         # Get the analysis result (you can modify this based on what you want to write)
         result = semantic_an.print_symbol_table()  # Print the symbol table
