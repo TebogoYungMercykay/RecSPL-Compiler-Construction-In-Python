@@ -63,7 +63,7 @@ def test():
             print()
         else:
             print(
-                "\033[91mType Checker Paused:  Please Check for Typing Errors...\033[0m"
+                "\033[91mType Checker Paused:  Please Check for Type Errors...\033[0m"
             )
     
     if (TYPE_SUCCESSFUL):
