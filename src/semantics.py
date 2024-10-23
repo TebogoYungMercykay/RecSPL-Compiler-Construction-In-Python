@@ -120,6 +120,7 @@ class SemanticAnalyzer:
         )
 
         # Adding to symbol table
+        vtype = 'num' if category == 'parameter' else node_info.type
         self.symbol_table[node_info.node_id] = SymbolInfo(
             node_info.node_id,
             unique_name,
@@ -127,7 +128,7 @@ class SemanticAnalyzer:
             node_info.token_class,
             node_info.scope_id,
             node_info.parent_scope_id,
-            node_info.type,
+            vtype,
             node_info.word,
             category
         )
