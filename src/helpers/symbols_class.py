@@ -86,18 +86,17 @@ class Symbols:
         ]
 
     def get_name(self, node_id):
-        symbol_info = self.get_symbol_info(node_id)
+        symbol_info = self.get_symbol_info(f"{node_id}")
         return symbol_info.get_word() if symbol_info else None
 
     def get_type(self, node_id):
-        symbol_info = self.get_symbol_info(node_id)
-        print("Info: ", symbol_info)
+        symbol_info = self.get_symbol_info(f"{node_id}")
         return symbol_info.get_type() if symbol_info else None
 
     def get_class(self, node_id):
-        symbol_info = self.get_symbol_info(node_id)
+        symbol_info = self.get_symbol_info(f"{node_id}")
         return symbol_info.get_token_class() if symbol_info else None
 
     def get_category(self, node_id):
-        symbol_info = self.get_symbol_info(node_id)
+        symbol_info = self.get_symbol_info(f"{node_id}")
         return symbol_info.get_category() if symbol_info else None
