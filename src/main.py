@@ -2,6 +2,7 @@ from helpers.convert_to_dfa import convert_to_dfa
 from helpers.lexing import lexing
 from helpers.parsing import parsing
 from helpers.analyser import analyser
+from helpers.type_checker import check_types 
 
 # from helpers.analyser import semantics
 
@@ -16,6 +17,8 @@ lexer_filepath = "out/lexer.xml"
 parser_filepath = "out/syntax_tree.xml"
 crawling_filepath = "out/semantics_crawling_output.txt"
 semantics_filepath = "out/semantics_sybols_output.txt"
+syntax_tree = None
+symbol_table = None
 
 def test():
     LEXING_SUCCESSFUL = lexing(lexer_filepath, code_filename)
@@ -24,31 +27,46 @@ def test():
             "\033[91mParsing Paused:  Please Fix Lexical Errors To Continue...\033[0m"
         )
 
+    syntax_tree = parsing(lexer_filepath, parser_filepath)
     PARSING_SUCCESSFUL = (
-        parsing(lexer_filepath, parser_filepath) if LEXING_SUCCESSFUL else False
+        (syntax_tree != None) if LEXING_SUCCESSFUL else False
     )
     if not PARSING_SUCCESSFUL:
         if not LEXING_SUCCESSFUL:
             print()
         else:
             print(
-                "\033[91mType Checker Paused:  Please Check for Syntax Errors...\033[0m"
+                "\033[91mSemantic Analysis Paused:  Please Check for Syntax Errors...\033[0m"
             )
 
-    TYPE_SUCCESSFUL = (
-        analyser(parser_filepath, crawling_filepath, semantics_filepath)
+    symbol_table = analyser(parser_filepath, crawling_filepath, semantics_filepath)
+    SEMANTICS_SUCCESSFUL = (
+        (symbol_table != None)
         if PARSING_SUCCESSFUL
         else False
     )
-    if not TYPE_SUCCESSFUL:
+    if not SEMANTICS_SUCCESSFUL:
         if not PARSING_SUCCESSFUL:
             print()
         else:
             print(
-                "\033[91mSemantic Analysis Paused:  Please Check for Static Scoping and Typing Errors...\033[0m"
+                "\033[91mType Checker Paused:  Please Check for Function & Variable Declaration Errors...\033[0m"
             )
     
-    if (TYPE_SUCCESSFUL): 
+    TYPE_SUCCESSFUL = (
+        check_types(syntax_tree, symbol_table)
+        if PARSING_SUCCESSFUL
+        else False
+    )
+    if not TYPE_SUCCESSFUL:
+        if not SEMANTICS_SUCCESSFUL:
+            print()
+        else:
+            print(
+                "\033[91mType Checker Paused:  Please Check for Typing Errors...\033[0m"
+            )
+    
+    if (TYPE_SUCCESSFUL):
         print(
             "\033[92mTesting Complete!.\033[0m"
         )
