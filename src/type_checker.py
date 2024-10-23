@@ -514,3 +514,19 @@ class TypeChecker:
             print(f"Error in Type FUNCTIONS: {str(e)}")
 
         return False
+
+    def typecheck_subfuncs(self, node):
+        try:
+            if "symbol" in node and node["symbol"] in ("SUBFUNCS", "FUNCTIONS"):
+                return self.typecheck_functions(node)
+        except Exception as e:
+            print(f"Error in Type FUNCTIONS: {str(e)}")
+
+        return False
+
+    def typecheck_prolog(self, node):
+        return "token" in node and node["token"]["word"] == "{"
+
+    def typecheck_epilog(self, node):
+        return "token" in node and node["token"]["word"] == "}"
+
