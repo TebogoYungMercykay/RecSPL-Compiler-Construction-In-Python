@@ -7,11 +7,8 @@ class SemanticError(Exception):
     pass
 
 class SemanticAnalyzer:
-    def __init__(self, parser_filepath):
-        analyzer = XMLSemanticAnalyzer(parser_filepath)
-        analyzer.analyze()
-
-        self.table = analyzer.get_node_table().items()
+    def __init__(self, parser_filepath, table):
+        self.table = table
         self.node_table = dict(sorted(self.table, key=lambda item: item[1].scope))
         self.symbol_table = {}
         self.parser_filepath = parser_filepath
