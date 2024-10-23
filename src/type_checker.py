@@ -500,3 +500,17 @@ class TypeChecker:
 
         return False
 
+    def typecheck_decl(self, node):
+        try:
+            children = node["children"]
+            if "symbol" in node and node["symbol"] == "DECL" and len(children) == 2:
+                header = self.find_node_by_id(children[0])
+                body = self.find_node_by_id(children[1])
+                if header is None or body is None:
+                    return False
+                
+                return self.typecheck_header(header) and self.typecheck_body(body)
+        except Exception as e:
+            print(f"Error in Type FUNCTIONS: {str(e)}")
+
+        return False
