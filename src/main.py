@@ -18,7 +18,7 @@ parser_filepath = "out/syntax_tree.xml"
 crawling_filepath = "out/semantics_crawling_output.txt"
 semantics_filepath = "out/semantics_sybols_output.txt"
 syntax_tree = None
-symbol_table = None
+symbols = None
 
 def test():
     LEXING_SUCCESSFUL = lexing(lexer_filepath, code_filename)
@@ -39,9 +39,9 @@ def test():
                 "\033[91mSemantic Analysis Paused:  Please Check for Syntax Errors...\033[0m"
             )
 
-    symbol_table = analyser(parser_filepath, crawling_filepath, semantics_filepath)
+    symbols = analyser(parser_filepath, crawling_filepath, semantics_filepath)
     SEMANTICS_SUCCESSFUL = (
-        (symbol_table != None)
+        (symbols != None)
         if PARSING_SUCCESSFUL
         else False
     )
@@ -54,7 +54,7 @@ def test():
             )
     
     TYPE_SUCCESSFUL = (
-        check_types(syntax_tree, symbol_table)
+        check_types(syntax_tree, symbols)
         if PARSING_SUCCESSFUL
         else False
     )
