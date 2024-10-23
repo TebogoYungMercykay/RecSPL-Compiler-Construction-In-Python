@@ -158,3 +158,30 @@ class TypeChecker:
         
         return const_node["token"]["class"].lower()
 
+    def typecheck_algo(self, node):
+        if "symbol" not in node or "unid" not in node:
+            raise TypeError("Invalid ALGO structure")
+        
+        try:
+            children = node["children"]
+            begin = self.find_node_by_id(children[0])
+            if not begin or "token" not in begin or begin["token"]["word"] != "begin":
+                return False
+                
+            instr = self.find_node_by_id(children[1])
+            if not instr:
+                return False
+                
+            if not self.typecheck_instruc(instr):
+                return False
+            
+            end = self.find_node_by_id(children[2])
+            if not end or "token" not in end or end["token"]["word"] != "end":
+                return False
+            
+            return True
+        except Exception as e:
+            print(f"Error in Type ALGO: {str(e)}")
+        
+        return False
+
