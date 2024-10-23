@@ -394,3 +394,16 @@ class TypeChecker:
             print(f"Error in Type BINOP: {str(e)}")
 
         return 'u'
+
+    def typecheck_arg(self, node):
+        try:
+            arg = self.find_node_by_id(node["children"][0])
+            if "symbol" in arg and arg["symbol"] == "ATOMIC":
+                return self.typecheck_atomic(arg)
+            elif "symbol" in arg and arg["symbol"] == "OP":
+                return self.typecheck_op(arg)
+        except Exception as e:
+            print(f"Error in Type ARG: {str(e)}")
+
+        return 'u'
+
