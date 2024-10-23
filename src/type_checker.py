@@ -101,3 +101,32 @@ class TypeChecker:
 
         return False
 
+    def typecheck_vtyp(self, node):
+        children = node["children"]
+        vname_node = self.find_node_by_id(children[0])
+
+        if not vname_node or "token" not in vname_node:
+            return False
+        
+        vtype = self.symbols.get_type(vname_node['unid'])
+        if vtype == "num":
+            return 'n'
+        elif vtype == "text":
+            return 't'
+        else:
+            return 'u'
+
+    def typecheck_ftyp(self, node):
+        children = node["children"]
+        fname_node = self.find_node_by_id(children[0])
+
+        if not fname_node or "token" not in fname_node:
+            return False
+        
+        ftype = self.symbols.get_type(fname_node['unid'])
+        if ftype == "void":
+            return 'n'
+        elif ftype == "num":
+            return 'v'
+        else:
+            return 'u'
