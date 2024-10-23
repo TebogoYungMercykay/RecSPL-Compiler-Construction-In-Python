@@ -419,3 +419,21 @@ class TypeChecker:
 
         return 'u'
     
+    def typecheck_simple(self, node):
+        try:
+            op = self.find_node_by_id(node["children"][0])
+            if "symbol" in op and op["symbol"] == "BINOP" and len(op["children"]) == 6:
+                atomic1 = self.find_node_by_id(op["children"][2])
+                atomic2 = self.find_node_by_id(op["children"][4])
+
+                if atomic1 is None or atomic2 is None:
+                    return 'u'
+                elif self.typecheck_binop(op) == self.typecheck_atomic(atomic1) == self.typecheck_atomic(atomic2) == 'b':
+                    return 'b'
+                elif self.typecheck_binop(op) == 'c' and (self.typecheck_atomic(atomic1) == self.typecheck_atomic(atomic2) == 'n'):
+                    return 'b'
+        except Exception as e:
+            print(f"Error in Type BRANCH: {str(e)}")
+
+        return 'u'
+
