@@ -577,3 +577,31 @@ class TypeChecker:
 
         return False
 
+    def typecheck_locvars(self, node):
+        try:
+            children = node["children"]
+            for i in range(0, len(children), 3):
+                if i >= len(children):
+                    break
+                    
+                vtyp_node = self.find_node_by_id(children[i])
+                if not vtyp_node:
+                    return False
+                    
+                vname_node = self.find_node_by_id(children[i + 1])
+                if not vname_node:
+                    return False
+
+                if not self.typecheck_vname(vname_node):
+                    return False
+                
+                comma_node = self.find_node_by_id(children[i + 2])
+                if not comma_node or "token" not in comma_node or comma_node["token"]["word"] != ",":
+                    return False
+
+            return True
+            
+        except Exception as e:
+            print(f"Error in Type LOCVARS: {str(e)}")
+
+        return False
