@@ -367,3 +367,30 @@ class TypeChecker:
 
         return 'u'
 
+    def typecheck_unop(self, node):
+        try:
+            if "symbol" in node and node["symbol"] == "UNOP" and len(node["children"]) == 4:
+                unop = self.find_node_by_id(node["children"][0])
+                if "token" in unop and unop["token"]["word"] == "not":
+                    return "b"
+                elif "token" in unop and unop["token"]["word"] == "sqrt":
+                    return "n"
+        except Exception as e:
+            print(f"Error in Type UNOP: {str(e)}")
+
+        return 'u'
+
+    def typecheck_binop(self, node):
+        try:
+            if "symbol" in node and node["symbol"] == "BINOP" and len(node["children"]) == 6:
+                binop = self.find_node_by_id(node["children"][0])
+                if "token" in binop and binop["token"]["word"] in ("or", "and"):
+                    return "b"
+                elif "token" in binop and binop["token"]["word"] in ("eq", "grt"):
+                    return "c"
+                elif "token" in binop and binop["token"]["word"] in ("add", "sub", "mul", "div"):
+                    return "n"
+        except Exception as e:
+            print(f"Error in Type BINOP: {str(e)}")
+
+        return 'u'
