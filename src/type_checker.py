@@ -233,10 +233,10 @@ class TypeChecker:
                     decl = self.find_decl_ancestor(node["unid"])
                     if decl is None:
                         return False
-                    
+
                     header = self.find_node_by_id(decl["children"][0])
                     f_type = self.find_node_by_id(header["children"][0])
-                    ftype = self.find_node_by_id(f_type["children"][0])["token"]["word"]
+                    ftype = self.find_node_by_id(f_type["children"][0])["token"]["word"][0]
                     
                     atomic = self.find_node_by_id(children[1])
                     if atomic is None:
