@@ -8,12 +8,18 @@ def single(code_filename, lexer_filepath, parser_filepath, crawling_filepath, se
     print(f"\033[94m===== DONE ({result == True}) =====\n\n\033[0m")
 
 def bulk(list_files):
-    for files in list_files:
+    for i, files in enumerate(list_files):
         print(f"\033[94m===== START ({files['code_filename']}) =====\033[0m")
 
         result = runner(files['code_filename'], files['lexer_filepath'], files['parser_filepath'], files['crawling_filepath'], files['semantics_filepath'])
-    
+        
         print(f"\033[94m===== DONE ({result == True}) =====\n\n\033[0m")
+        
+        if (not result):
+            if (i >= 16):
+                print(f"Test ({i}) Case Works")
+            elif not result:
+                break
 
 code_filename = "RecSPL.txt"
 lexer_filepath = "out/lexer.xml"
