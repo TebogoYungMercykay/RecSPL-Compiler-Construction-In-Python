@@ -6,7 +6,10 @@ Node ID    Type       Word            Scope      Parent ID  Token ID   Token Cla
 6          num        V_a             0          5          3          V                 main > GLOBVARS > VNAME
 11         num        V_b             0          10         6          V                 main > GLOBVARS > VNAME
 16         text       V_c             0          15         9          V                 main > GLOBVARS > VNAME
-24         undefined  V_b             1          23         12         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > VNAME
-31         undefined  V_a             1          30         16         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > VNAME
-36         undefined  V_b             1          35         18         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > ATOMIC > VNAME
+21         text       V_d             0          20         12         V                 main > GLOBVARS > VNAME
+29         undefined  V_b             1          28         15         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > VNAME
+36         undefined  V_a             1          35         19         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > VNAME
+41         undefined  V_b             1          40         21         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > ATOMIC > VNAME
+46         undefined  V_c             1          45         23         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > VNAME
+51         undefined  V_d             1          50         25         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > ATOMIC > VNAME
 ===============================================================================================================================================================================================================================================

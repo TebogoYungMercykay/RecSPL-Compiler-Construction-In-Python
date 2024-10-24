@@ -6,15 +6,7 @@ Node ID    Type       Word            Scope      Parent ID  Token ID   Token Cla
 6          num        V_a             0          5          3          V                 main > GLOBVARS > VNAME
 11         num        V_b             0          10         6          V                 main > GLOBVARS > VNAME
 16         text       V_c             0          15         9          V                 main > GLOBVARS > VNAME
-24         undefined  F_calculate     1          23         12         F                 main > ALGO > INSTRUC > COMMAND > CALL > FNAME
-28         undefined  V_a             1          27         14         V                 main > ALGO > INSTRUC > COMMAND > CALL > ATOMIC > VNAME
-32         undefined  V_b             1          31         16         V                 main > ALGO > INSTRUC > COMMAND > CALL > ATOMIC > VNAME
-36         undefined  V_b             1          35         18         V                 main > ALGO > INSTRUC > COMMAND > CALL > ATOMIC > VNAME
-49         void       F_calculate     1          48         25         F                 main > FUNCTIONS > DECL > HEADER > FNAME
-52         undefined  V_d             1          51         27         V                 main > FUNCTIONS > DECL > HEADER > VNAME
-55         undefined  V_e             1          54         29         V                 main > FUNCTIONS > DECL > HEADER > VNAME
-58         undefined  V_f             1          57         31         V                 main > FUNCTIONS > DECL > HEADER > VNAME
-66         num        V_g             1          65         35         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
-71         num        V_h             1          70         38         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
-76         text       V_i             1          75         41         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
+21         text       V_d             0          20         12         V                 main > GLOBVARS > VNAME
+29         undefined  V_c             1          28         15         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > VNAME
+39         undefined  V_a             1          38         19         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > VNAME
 ===============================================================================================================================================================================================================================================

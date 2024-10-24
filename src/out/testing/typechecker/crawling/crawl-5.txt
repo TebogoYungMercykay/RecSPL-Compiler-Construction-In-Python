@@ -6,16 +6,7 @@ Node ID    Type       Word            Scope      Parent ID  Token ID   Token Cla
 6          num        V_a             0          5          3          V                 main > GLOBVARS > VNAME
 11         num        V_b             0          10         6          V                 main > GLOBVARS > VNAME
 16         text       V_c             0          15         9          V                 main > GLOBVARS > VNAME
-24         undefined  V_a             1          23         12         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > VNAME
-34         undefined  V_a             1          33         16         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > OP > UNOP > ARG > ATOMIC > VNAME
-40         undefined  V_b             1          39         19         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > VNAME
-50         undefined  V_a             1          49         23         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > OP > BINOP > ARG > ATOMIC > VNAME
-55         undefined  V_b             1          54         25         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > OP > BINOP > ARG > ATOMIC > VNAME
-61         undefined  V_b             1          60         28         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > VNAME
-71         undefined  V_a             1          70         32         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > OP > BINOP > ARG > ATOMIC > VNAME
-76         undefined  V_b             1          75         34         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > OP > BINOP > ARG > ATOMIC > VNAME
-82         undefined  V_b             1          81         37         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > VNAME
-97         undefined  V_a             1          96         43         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > OP > BINOP > ARG > OP > BINOP > ARG > ATOMIC > VNAME
-102        undefined  V_b             1          101        45         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > OP > BINOP > ARG > OP > BINOP > ARG > ATOMIC > VNAME
-113        undefined  V_a             1          112        50         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > OP > BINOP > ARG > OP > UNOP > ARG > ATOMIC > VNAME
+31         undefined  V_a             2          30         15         V                 main > ALGO > INSTRUC > COMMAND > BRANCH > COND > SIMPLE > BINOP > ATOMIC > VNAME
+35         undefined  V_b             2          34         17         V                 main > ALGO > INSTRUC > COMMAND > BRANCH > COND > SIMPLE > BINOP > ATOMIC > VNAME
+45         undefined  V_c             3          44         22         V                 main > ALGO > INSTRUC > COMMAND > BRANCH > ALGO > INSTRUC > COMMAND > ATOMIC > VNAME
 ===============================================================================================================================================================================================================================================
