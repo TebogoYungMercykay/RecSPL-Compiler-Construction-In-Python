@@ -26,6 +26,59 @@ The project will include the following main components:
 
 ## How to Run Compiler:
 
+- ### Initial Compiler Setup and Usage Guide
+
+  - #### Single File Compilation
+
+    - ##### 1. Configure File Paths
+
+      In `main.py`, set the following file paths:
+
+      ```python
+      code_filename = "RecSPL.txt"          # Input source code file
+      lexer_filepath = "out/lexer.xml"      # Lexer output
+      parser_filepath = "out/syntax_tree.xml"  # Parser output
+      crawling_filepath = "out/semantics_crawling_output.txt"  # Semantic crawling results
+      semantics_filepath = "out/semantics_symbols_output.txt"  # Symbol table output
+      ```
+
+    - ##### 2. Run the Compiler
+    
+      To compile a single file, use the `single()` function:
+
+      ```python
+      single(
+          code_filename,
+          lexer_filepath,
+          parser_filepath,
+          crawling_filepath,
+          semantics_filepath
+      )
+      ```
+
+  - #### Batch Compilation
+
+      To compile multiple files at once, use the `bulk()` function. Here's how to set it up:
+
+      ```python
+      # Create a list of file configurations
+      batch_files = []
+
+      # Generate file paths for each test case (1 through 20)
+      for k in range(1, 21):
+          file_paths = {
+              "code_filename": f"out/testing/typechecker/recspl/code-{k}.txt",
+              "lexer_filepath": f"out/testing/typechecker/tokens/lexer-{k}.xml",
+              "parser_filepath": f"out/testing/typechecker/tree/tree-{k}.xml",
+              "crawling_filepath": f"out/testing/typechecker/crawling/crawl-{k}.txt",
+              "semantics_filepath": f"out/testing/typechecker/symbols/symbols-{k}.txt"
+          }
+          batch_files.append(file_paths)
+
+      # Run the compiler on all files
+      bulk(batch_files)
+      ```
+
 - ### Installing Python Virtual Environment:
 
   ```bash
