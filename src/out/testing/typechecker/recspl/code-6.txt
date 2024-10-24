@@ -1,6 +1,7 @@
 main
 num V_a, num V_b, text V_c,
 begin
+    V_a = F_calculate(V_a, V_a, V_b);
     skip;
 end
 num F_calculate(V_d, V_e, V_f)

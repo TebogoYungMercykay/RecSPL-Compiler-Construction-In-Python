@@ -1,6 +1,16 @@
 main
 num V_a, num V_b, text V_c,
 begin
+    if grt(V_a, V_b)
+    then
+        begin
+            print V_c;
+            skip;
+        end
+    else
+        begin
+            halt;
+        end;
     skip;
 end
 num F_calculate(V_d, V_e, V_f)
