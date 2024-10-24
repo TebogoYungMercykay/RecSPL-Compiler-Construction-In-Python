@@ -1,4 +1,4 @@
-# SEMANTICS PART
+# Semantic Analyser for the RecSPL Language
 
 from utilities.tree_crawling import XMLSemanticAnalyzer
 from helpers.node_class import SymbolInfo
