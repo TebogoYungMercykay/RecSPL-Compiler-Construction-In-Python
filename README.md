@@ -233,10 +233,6 @@ When working on this project:
 3. Ensure all tests pass before merging your changes.
 4. Update this README when adding new components or making significant changes to the project structure.
 
-## Building and Running
-
-(Add specific instructions for building and running your compiler, including any dependencies or setup required.)
-
 ## Output
 
 Compilation outputs and intermediate files are stored in the `out/` directory. Refer to the README in that directory for more details on the output files.
