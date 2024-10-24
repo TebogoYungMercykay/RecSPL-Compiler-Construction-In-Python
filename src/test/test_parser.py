@@ -8,11 +8,11 @@ def test_pytest_is_working_1():
 
 @pytest.mark.parametrize("file_number", range(1, 2))
 def test_parsing_files_first(file_number):
-    assert parsing(f"out/testing/tokens/lexer-{file_number}.xml", f"out/testing/tree/tree-{file_number}.xml") == True
+    assert parsing(f"out/testing/tokens/lexer-{file_number}.xml", f"out/testing/tree/tree-{file_number}.xml") != None
 
 @pytest.mark.parametrize("file_number", range(2, 21))
 def test_parsing_files_2_to_20(file_number):
-    assert parsing(f"out/testing/tokens/lexer-{file_number}.xml", f"out/testing/tree/tree-{file_number}.xml") == False, \
+    assert parsing(f"out/testing/tokens/lexer-{file_number}.xml", f"out/testing/tree/tree-{file_number}.xml") == None, \
         f"Parsing Should Not Pass For lexer-{file_number}.xml"
 
 if __name__ == "__main__":

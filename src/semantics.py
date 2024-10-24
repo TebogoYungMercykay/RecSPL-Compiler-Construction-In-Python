@@ -1,4 +1,4 @@
-# SEMANTICS PART
+# Semantic Analyser for the RecSPL Language
 
 from utilities.tree_crawling import XMLSemanticAnalyzer
 from helpers.node_class import SymbolInfo
@@ -7,11 +7,8 @@ class SemanticError(Exception):
     pass
 
 class SemanticAnalyzer:
-    def __init__(self, parser_filepath):
-        analyzer = XMLSemanticAnalyzer(parser_filepath)
-        analyzer.analyze()
-
-        self.table = analyzer.get_node_table().items()
+    def __init__(self, parser_filepath, table):
+        self.table = table
         self.node_table = dict(sorted(self.table, key=lambda item: item[1].scope))
         self.symbol_table = {}
         self.parser_filepath = parser_filepath
@@ -123,6 +120,7 @@ class SemanticAnalyzer:
         )
 
         # Adding to symbol table
+        vtype = 'num' if category == 'parameter' else node_info.type
         self.symbol_table[node_info.node_id] = SymbolInfo(
             node_info.node_id,
             unique_name,
@@ -130,7 +128,7 @@ class SemanticAnalyzer:
             node_info.token_class,
             node_info.scope_id,
             node_info.parent_scope_id,
-            node_info.type,
+            vtype,
             node_info.word,
             category
         )

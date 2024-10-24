@@ -1,4 +1,5 @@
 # Parser for the RecSPL Language
+
 from helpers.syntax_tree import SyntaxTree
 
 class Parser:
@@ -77,8 +78,8 @@ class Parser:
             self.parse_globvars(parent_node)
         else:
             # TODO: Ignore Epsilon Transitions
-            self.add_empty_node(parent_node)
-            # pass  # epsilon case
+            # self.add_empty_node(parent_node)
+            pass  # epsilon case
 
     def parse_vtyp(self, parent_node):
         """Parses VTYP -> num | text"""
@@ -123,8 +124,8 @@ class Parser:
             self.parse_instruc(parent_node)
         else:
             # TODO: Ignore Epsilon Transitions
-            self.add_empty_node(parent_node)
-            # pass  # epsilon case
+            # self.add_empty_node(parent_node)
+            pass  # epsilon case
 
     def parse_command(self, parent_node):
         """Parses COMMAND -> skip | halt | print ATOMIC | return ATOMIC | ASSIGN | CALL | BRANCH"""
@@ -432,8 +433,8 @@ class Parser:
             self.parse_functions(parent_node)
         else:
             # TODO: Ignore Epsilon Transitions
-            self.add_empty_node(parent_node)
-            # pass  # epsilon case
+            # self.add_empty_node(parent_node)
+            pass  # epsilon case
 
     def parse_declaration(self, parent_node):
         """Parses DECL -> HEADER BODY"""
@@ -520,3 +521,6 @@ class Parser:
     def add_empty_node(self, parent_node):
         """Empty node to represent epsilon transitions"""
         self.syntax_tree.add_inner_node(parent_node, "ε")
+        
+    def get_syntax_tree(self):
+        return self.syntax_tree

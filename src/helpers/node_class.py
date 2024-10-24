@@ -27,6 +27,39 @@ class NodeInfo:
         self.type = type
         self.data = data
 
+    def get_node_id(self):
+        return self.node_id
+
+    def get_classes(self):
+        return self.classes
+
+    def get_word(self):
+        return self.word
+
+    def get_scope(self):
+        return self.scope
+
+    def get_parent_id(self):
+        return self.parent_id
+
+    def get_token_id(self):
+        return self.token_id
+
+    def get_token_class(self):
+        return self.token_class
+
+    def get_scope_id(self):
+        return self.scope_id
+
+    def get_parent_scope_id(self):
+        return self.parent_scope_id
+
+    def get_type(self):
+        return self.type
+
+    def get_data(self):
+        return self.data
+
     def update_symbol(self, name, scope_id, new_data):
         if name == self.word and scope_id == self.scope_id:
             self.data = new_data
@@ -64,9 +97,6 @@ class NodeInfo:
         )
 
     def print(self, node_id):
-        if self.node_id != node_id:
-            return f"Incorrect Node ID: {node_id}."
-
         class_str = " > ".join(self.classes)
         if len(class_str) > 149:
             class_str = class_str[:146] + "..."
@@ -98,6 +128,36 @@ class SymbolInfo:
         self.data = data
         self.old = old
         self.category = category
+
+    def get_node_id(self):
+        return self.node_id
+
+    def get_word(self):
+        return self.word
+
+    def get_parent_id(self):
+        return self.parent_id
+
+    def get_token_class(self):
+        return self.token_class
+
+    def get_scope_id(self):
+        return self.scope_id
+
+    def get_parent_scope_id(self):
+        return self.parent_scope_id
+
+    def get_type(self):
+        return self.type
+
+    def get_data(self):
+        return self.data
+
+    def get_old(self):
+        return self.old
+
+    def get_category(self):
+        return self.category
 
     def update_symbol(self, name, scope_id, new_data, old):
         if name == self.word and scope_id == self.scope_id and self.old == old:
@@ -136,7 +196,4 @@ class SymbolInfo:
         )
 
     def print(self, node_id):
-        if self.node_id != node_id:
-            return f"Incorrect Node ID: {node_id}."
-
         return f"{self.node_id:<10} {self.type:<10} {self.word:<10} {self.data:<15} {self.parent_id:<10} {self.token_class:<6} {self.old:<15} {self.category:<15}"
