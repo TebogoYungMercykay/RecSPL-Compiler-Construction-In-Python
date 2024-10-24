@@ -108,7 +108,7 @@ class TypeChecker:
         if not vname_node or "token" not in vname_node:
             return False
         
-        vtype = self.symbols.get_type(vname_node['unid'])
+        vtype = self.symbols.get_type(vname_node['unid'], vname_node['token']['word'])
         if vtype == "num":
             return 'n'
         elif vtype == "text":
@@ -123,7 +123,7 @@ class TypeChecker:
         if not fname_node or "token" not in fname_node:
             return False
         
-        ftype = self.symbols.get_type(fname_node['unid'])
+        ftype = self.symbols.get_type(fname_node['unid'], fname_node['token']['word'])
         if ftype == "void":
             return 'v'
         elif ftype == "num":
