@@ -1,4 +1,5 @@
 # Lexer for the RecSPL Language
+
 import re
 from utilities.xml_methods import tokens_to_xml
 
