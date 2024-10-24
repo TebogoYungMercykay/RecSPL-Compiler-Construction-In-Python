@@ -2,7 +2,8 @@ from helpers.convert_to_dfa import convert_to_dfa
 from helpers.lexing import lexing
 from helpers.parsing import parsing
 from helpers.analyser import analyser
-from helpers.type_checker import check_types 
+from helpers.type_checker import check_types
+from translator import generate_assembly
 
 def runner(code_filename, lexer_filepath, parser_filepath, crawling_filepath, semantics_filepath):
     syntax_tree = None
@@ -56,6 +57,7 @@ def runner(code_filename, lexer_filepath, parser_filepath, crawling_filepath, se
             )
     
     if (TYPE_SUCCESSFUL):
+        print(generate_assembly(code_filename))
         print(
             "\033[92mTesting Complete!.\033[0m"
         )
