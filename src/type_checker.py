@@ -125,9 +125,9 @@ class TypeChecker:
         
         ftype = self.symbols.get_type(fname_node['unid'])
         if ftype == "void":
-            return 'n'
-        elif ftype == "num":
             return 'v'
+        elif ftype == "num":
+            return 'n'
         else:
             return 'u'
 
@@ -230,11 +230,10 @@ class TypeChecker:
                         return False
                     return self.typecheck_atomic(atomic) in ("n", "t")
                 elif "token" in command and command["token"]["word"] == "return":
-                    # TODO: Double Check
-                    decl = self.find_decl_ancestor(children[1])
+                    decl = self.find_decl_ancestor(node["unid"])
                     if decl is None:
                         return False
-
+                    
                     header = self.find_node_by_id(decl["children"][0])
                     f_type = self.find_node_by_id(header["children"][0])
                     ftype = self.find_node_by_id(f_type["children"][0])["token"]["word"]
@@ -301,11 +300,6 @@ class TypeChecker:
 
         return False
 
-    """
-    # TODO: Test Code => typecheck_term
-    V_aa = not(V_aa);
-    V_ac = "Hello";
-    """
     def typecheck_term(self, node):
         try:
             child = self.find_node_by_id(node["children"][0])
