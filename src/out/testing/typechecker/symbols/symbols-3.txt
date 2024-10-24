@@ -6,11 +6,5 @@ Node ID    Type       Word       Value           Parent ID  Class  Real Name    
 6          num        v1         undefined       5          V      V_a             declaration    
 11         num        v2         undefined       10         V      V_b             declaration    
 16         text       v3         undefined       15         V      V_c             declaration    
-49         void       f1         undefined       48         F      F_calculate     declaration    
-52         num        v4         undefined       51         V      V_d             parameter      
-55         num        v5         undefined       54         V      V_e             parameter      
-58         num        v6         undefined       57         V      V_f             parameter      
-66         num        v7         undefined       65         V      V_g             declaration    
-71         num        v8         undefined       70         V      V_h             declaration    
-76         text       v9         undefined       75         V      V_i             declaration    
+21         text       v4         undefined       20         V      V_d             declaration    
 ===============================================================================================

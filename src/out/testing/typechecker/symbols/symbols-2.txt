@@ -6,4 +6,5 @@ Node ID    Type       Word       Value           Parent ID  Class  Real Name    
 6          num        v1         undefined       5          V      V_a             declaration    
 11         num        v2         undefined       10         V      V_b             declaration    
 16         text       v3         undefined       15         V      V_c             declaration    
+21         text       v4         undefined       20         V      V_d             declaration    
 ===============================================================================================
