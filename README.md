@@ -1,6 +1,6 @@
 # RecSPL Compiler Construction and Design Project
 
-![Image](images/readme.jpg)
+<img src="images/readme.jpg" style="width: 100%; height: 40%;" />
 
 This `src/` directory contains the core components of our `Recursive Student Programming Language` Compiler Construction and Design project. The project aims to implement a complete compiler, including lexical analysis, parsing, semantic analysis, and code generation.
 
