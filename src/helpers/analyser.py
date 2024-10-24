@@ -25,7 +25,7 @@ def analyser(parser_filepath, crawling_filepath, semantics_filepath):
 
         print(f"Semantics' Symbol Table Generated and Saved to {semantics_filepath}")
         print("\033[92mSemantic Analysis successful.\033[0m")
-        print("----------------------------------\n\n")
+        print("----------------------------------")
 
         symbols = Symbols(analyzer.get_node_table(), semantic_an.get_symbol_table())
         return symbols

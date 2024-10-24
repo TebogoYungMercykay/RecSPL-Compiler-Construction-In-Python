@@ -9,11 +9,11 @@ def check_types(syntax_tree, symbols):
         types_result = checker.check_types()
 
         print("\033[92mType Checking Successful.\033[0m")
-        print("----------------------------------\n\n")
+        print("----------------------------------")
         
         return types_result
     except TypeError as e:
         print(f"Type Checking failed: {e}")
-        print("----------------------------------\n\n")
+        print("----------------------------------")
 
         return False

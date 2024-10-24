@@ -13,6 +13,6 @@ def lexing(lexer_filepath, code_filename):
     lexer = Lexer(source_code)
 
     result = lexer.write_tokens_to_xml(lexer_filepath)
-    print("----------------------------------\n\n")
+    print("----------------------------------")
 
     return result
