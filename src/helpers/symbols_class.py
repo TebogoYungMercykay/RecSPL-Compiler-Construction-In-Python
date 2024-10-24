@@ -11,7 +11,7 @@ class Symbols:
     def get_node_table(self):
         return self.node_table
 
-    def get_symbol_info(self, node_id, word, visited_scopes=None):
+    def get_symbol_info(self, node_id, word, visited_scopes=None, scope=None):
         # Initialize visited_scopes set on first call
         if visited_scopes is None:
             visited_scopes = set()
@@ -20,6 +20,9 @@ class Symbols:
         if not node_info:
             print(f"No node info found for node ID: {node_id}")
             return None
+        
+        if node_info.get_node_id() == node_id:
+            scope = node_info.get_scope()
 
         current_scope_id = node_info.scope_id
         if current_scope_id in visited_scopes:
@@ -46,7 +49,7 @@ class Symbols:
                 # Check each node in root scope
                 for root_node in root_nodes:
                     if root_node.scope_id not in visited_scopes:
-                        result = self.get_symbol_info(root_node.node_id, word, visited_scopes.copy())
+                        result = self.get_symbol_info(root_node.node_id, word, visited_scopes.copy(), scope)
                         if result:
                             return result
             return None
@@ -57,7 +60,7 @@ class Symbols:
         ]
 
         for parent_node in parent_nodes:
-            result = self.get_symbol_info(parent_node.node_id, word, visited_scopes.copy())
+            result = self.get_symbol_info(parent_node.node_id, word, visited_scopes.copy(), scope)
             if result:
                 return result
         
@@ -70,9 +73,15 @@ class Symbols:
             
             for root_node in root_nodes:
                 if root_node.scope_id not in visited_scopes:
-                    result = self.get_symbol_info(root_node.node_id, word, visited_scopes.copy())
+                    result = self.get_symbol_info(root_node.node_id, word, visited_scopes.copy(), scope)
                     if result:
                         return result
+
+        if word.startswith("F_") and scope != 0:
+            result = self.get_symbol_by_parent_scope_id(node_info.get_parent_scope_id())
+            for node in result:
+                if node.get_old() == word:
+                    return node
 
         return None
 
@@ -80,6 +89,12 @@ class Symbols:
         return [
             node for node in self.symbol_table.values()
             if node.scope_id == scope_id
+        ]
+        
+    def get_symbol_by_parent_scope_id(self, parent_scope_id):
+        return [
+            node for node in self.symbol_table.values()
+            if node.parent_scope_id == parent_scope_id
         ]
 
     def get_name(self, node_id, word):
