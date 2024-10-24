@@ -15,8 +15,8 @@ def bulk(list_files):
         
         print(f"\033[94m===== DONE ({result == True}) =====\n\n\033[0m")
         
-        if (not result):
-            if (i >= 16):
+        if not result:
+            if (i >= 15):
                 print(f"Test ({i}) Case Works")
             elif not result:
                 break
