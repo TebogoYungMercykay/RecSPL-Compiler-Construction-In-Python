@@ -13,6 +13,7 @@ def runner(code_filename, lexer_filepath, parser_filepath, crawling_filepath, se
         print(
             "\033[91mParsing Paused:  Please Fix Lexical Errors To Continue...\033[0m"
         )
+        return False
 
     syntax_tree = parsing(lexer_filepath, parser_filepath)
     PARSING_SUCCESSFUL = (
@@ -25,6 +26,7 @@ def runner(code_filename, lexer_filepath, parser_filepath, crawling_filepath, se
             print(
                 "\033[91mSemantic Analysis Paused:  Please Check for Syntax Errors...\033[0m"
             )
+            return False
 
     symbols = analyser(parser_filepath, crawling_filepath, semantics_filepath)
     SEMANTICS_SUCCESSFUL = (
@@ -61,5 +63,6 @@ def runner(code_filename, lexer_filepath, parser_filepath, crawling_filepath, se
         print(
             "\033[91mSome Tests Were Unsuccessful!.\033[0m"
         )
+        return False
 
     return True

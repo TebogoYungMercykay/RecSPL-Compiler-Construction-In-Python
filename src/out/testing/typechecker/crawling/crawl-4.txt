@@ -6,25 +6,16 @@ Node ID    Type       Word            Scope      Parent ID  Token ID   Token Cla
 6          num        V_a             0          5          3          V                 main > GLOBVARS > VNAME
 11         num        V_b             0          10         6          V                 main > GLOBVARS > VNAME
 16         text       V_c             0          15         9          V                 main > GLOBVARS > VNAME
-31         num        F_calculate     1          30         16         F                 main > FUNCTIONS > DECL > HEADER > FNAME
-34         undefined  V_d             1          33         18         V                 main > FUNCTIONS > DECL > HEADER > VNAME
-37         undefined  V_e             1          36         20         V                 main > FUNCTIONS > DECL > HEADER > VNAME
-40         undefined  V_f             1          39         22         V                 main > FUNCTIONS > DECL > HEADER > VNAME
-48         num        V_g             1          47         26         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
-53         num        V_h             1          52         29         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
-58         text       V_i             1          57         32         V                 main > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
-74         void       F_calculates    2          73         40         F                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > HEADER > FNAME
-77         undefined  V_j             2          76         42         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > HEADER > VNAME
-80         undefined  V_k             2          79         44         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > HEADER > VNAME
-83         undefined  V_l             2          82         46         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > HEADER > VNAME
-91         num        V_m             2          90         50         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
-96         text       V_n             2          95         53         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
-101        text       V_o             2          100        56         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
-117        void       F_calculate     3          116        64         F                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > HEADER > FNAME
-120        undefined  V_p             3          119        66         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > HEADER > VNAME
-123        undefined  V_q             3          122        68         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > HEADER > VNAME
-126        undefined  V_r             3          125        70         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > HEADER > VNAME
-134        num        V_s             3          133        74         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
-139        text       V_t             3          138        77         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
-144        text       V_u             3          143        80         V                 main > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > FUNCTIONS > DECL > BODY > LOCVARS > VNAME
+24         undefined  V_a             1          23         12         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > VNAME
+34         undefined  V_a             1          33         16         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > OP > UNOP > ARG > ATOMIC > VNAME
+40         undefined  V_b             1          39         19         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > VNAME
+50         undefined  V_a             1          49         23         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > OP > BINOP > ARG > ATOMIC > VNAME
+55         undefined  V_b             1          54         25         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > OP > BINOP > ARG > ATOMIC > VNAME
+61         undefined  V_b             1          60         28         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > VNAME
+71         undefined  V_a             1          70         32         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > OP > BINOP > ARG > ATOMIC > VNAME
+76         undefined  V_b             1          75         34         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > OP > BINOP > ARG > ATOMIC > VNAME
+82         undefined  V_b             1          81         37         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > VNAME
+97         undefined  V_a             1          96         43         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > OP > BINOP > ARG > OP > BINOP > ARG > ATOMIC > VNAME
+102        undefined  V_b             1          101        45         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > OP > BINOP > ARG > OP > BINOP > ARG > ATOMIC > VNAME
+113        undefined  V_a             1          112        50         V                 main > ALGO > INSTRUC > COMMAND > ASSIGN > TERM > OP > BINOP > ARG > OP > UNOP > ARG > ATOMIC > VNAME
 ===============================================================================================================================================================================================================================================

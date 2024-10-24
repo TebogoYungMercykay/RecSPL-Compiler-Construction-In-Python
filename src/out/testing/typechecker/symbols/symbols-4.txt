@@ -6,25 +6,4 @@ Node ID    Type       Word       Value           Parent ID  Class  Real Name    
 6          num        v1         undefined       5          V      V_a             declaration    
 11         num        v2         undefined       10         V      V_b             declaration    
 16         text       v3         undefined       15         V      V_c             declaration    
-31         num        f1         undefined       30         F      F_calculate     declaration    
-34         num        v4         undefined       33         V      V_d             parameter      
-37         num        v5         undefined       36         V      V_e             parameter      
-40         num        v6         undefined       39         V      V_f             parameter      
-48         num        v7         undefined       47         V      V_g             declaration    
-53         num        v8         undefined       52         V      V_h             declaration    
-58         text       v9         undefined       57         V      V_i             declaration    
-74         void       f2         undefined       73         F      F_calculates    declaration    
-77         num        v10        undefined       76         V      V_j             parameter      
-80         num        v11        undefined       79         V      V_k             parameter      
-83         num        v12        undefined       82         V      V_l             parameter      
-91         num        v13        undefined       90         V      V_m             declaration    
-96         text       v14        undefined       95         V      V_n             declaration    
-101        text       v15        undefined       100        V      V_o             declaration    
-117        void       f3         undefined       116        F      F_calculate     declaration    
-120        num        v16        undefined       119        V      V_p             parameter      
-123        num        v17        undefined       122        V      V_q             parameter      
-126        num        v18        undefined       125        V      V_r             parameter      
-134        num        v19        undefined       133        V      V_s             declaration    
-139        text       v20        undefined       138        V      V_t             declaration    
-144        text       v21        undefined       143        V      V_u             declaration    
 ===============================================================================================

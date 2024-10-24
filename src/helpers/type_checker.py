@@ -8,8 +8,9 @@ def check_types(syntax_tree, symbols):
         checker = TypeChecker(syntax_tree, symbols)
         types_result = checker.check_types()
 
-        print("\033[92mType Checking Successful.\033[0m")
-        print("----------------------------------")
+        if types_result:
+            print("\033[92mType Checking Successful.\033[0m")
+            print("----------------------------------")
         
         return types_result
     except TypeError as e:
