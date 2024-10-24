@@ -1,7 +1,8 @@
 main
-num V_a, num V_b, text V_c,
+num V_a, num V_b, text V_c, text V_d,
 begin
     V_b < input;
     V_a = V_b;
+    V_c = V_d;
     skip;
 end

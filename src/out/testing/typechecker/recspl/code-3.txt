@@ -1,14 +1,7 @@
 main
-num V_a, num V_b, text V_c,
+num V_a, num V_b, text V_c, text V_d,
 begin
-    F_calculate(V_a, V_b, V_b);
+    V_c = "Text";
+    V_a = 9;
     skip;
-end
-void F_calculate(V_d, V_e, V_f)
-{
-    num V_g, num V_h, text V_i,
-    begin
-        skip;
-    end
-}
 end

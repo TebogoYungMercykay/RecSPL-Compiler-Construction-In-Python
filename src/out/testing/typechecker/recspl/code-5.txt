@@ -1,9 +1,15 @@
 main
 num V_a, num V_b, text V_c,
 begin
-    V_a = sqrt(V_a);
-    V_b = mul(V_a, V_b);
-    V_b = add(V_a, V_b);
-    V_b = add(mul(V_a, V_b), sqrt(V_a));
+    if grt(V_a, V_b)
+    then
+        begin
+            print V_c;
+            skip;
+        end
+    else
+        begin
+            halt;
+        end;
     skip;
 end

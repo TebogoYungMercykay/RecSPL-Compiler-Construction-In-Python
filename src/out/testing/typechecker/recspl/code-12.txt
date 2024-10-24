@@ -7,24 +7,8 @@ num F_calculate(V_d, V_e, V_f)
 {
     num V_g, num V_h, text V_i,
     begin
+        return add(V_a, V_g);
         skip;
-        F_calculates(V_g, V_h, V_i);
     end
 }
-    void F_calculates(V_j, V_k, V_l)
-    {
-        num V_m, text V_n, text V_o,
-        begin
-            skip;
-        end
-    }
-        void F_calculated(V_p, V_q, V_r)
-        {
-            num V_s, text V_t, text V_u,
-            begin
-                skip;
-            end
-        }
-        end
-    end
 end

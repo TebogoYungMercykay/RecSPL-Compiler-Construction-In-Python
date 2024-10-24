@@ -1,6 +1,7 @@
 main
 num V_a, num V_b, text V_c,
 begin
+    V_a = F_calculate(V_a, V_a, V_b);
     skip;
 end
 num F_calculate(V_d, V_e, V_f)
@@ -18,13 +19,5 @@ num F_calculate(V_d, V_e, V_f)
             skip;
         end
     }
-        void F_calculated(V_p, V_q, V_r)
-        {
-            num V_s, text V_t, text V_u,
-            begin
-                skip;
-            end
-        }
-        end
     end
 end
