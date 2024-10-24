@@ -1,4 +1,6 @@
-# Target Code Generator for the RecSPL Language
+# Translator for the RecSPL Language
+
+import os
 
 def generate_assembly(input_filename):
     try:
@@ -14,6 +16,8 @@ def generate_assembly(input_filename):
         variables = {}
         function_params = {}
         current_function = None
+        variable_counter = 1
+        function_counter = 1
         
         i = 1  # Skip 'main'
         while i < len(lines):
@@ -23,7 +27,8 @@ def generate_assembly(input_filename):
                 var_decl = line.rstrip(',')
                 parts = var_decl.split()
                 var_type = parts[0]
-                var_name = parts[1]
+                var_name = f'v{variable_counter}'
+                variable_counter += 1
                 if var_type == 'num':
                     variables[var_name] = 'dq 0'
                 else:
@@ -31,14 +36,15 @@ def generate_assembly(input_filename):
                     
             elif '(' in line and ')' in line:
                 if line.startswith(('num ', 'void ')):
-                    func_name = line.split('(')[0].split()[1]
+                    func_name = f'f{function_counter}'
+                    function_counter += 1
                     params = line.split('(')[1].split(')')[0].split(',')
                     function_params[func_name] = [p.strip() for p in params]
                     
             i += 1
             
         for var_name, var_type in variables.items():
-            output.append(f"    {var_name.lower()} {var_type}")
+            output.append(f"    {var_name} {var_type}")
             
         output.append("\nsection .text")
         output.append("global main")
@@ -55,9 +61,9 @@ def generate_assembly(input_filename):
                 output.append("    mov rbp, rsp")
                 
             elif line.startswith(('num ', 'void ')):
-                func_name = line.split('(')[0].split()[1]
+                func_name = f'f{function_counter - 1}'  # Referring to the last function declared
                 current_function = func_name
-                output.append(f"\n{func_name.lower()}:")
+                output.append(f"\n{func_name}:")
                 output.append("    push rbp")
                 output.append("    mov rbp, rsp")
                 
@@ -103,10 +109,41 @@ def generate_assembly(input_filename):
                     output.append("    pop rbp")
                     output.append("    ret")
                     
+            elif '< input' in line:
+                var_name = line.split('<')[0].strip()
+                output.append(f"    mov rax, 0")
+                output.append(f"    mov [{var_name.lower()}], rax")
+                
+            elif '=' in line:
+                var_name, expr = line.split('=')
+                var_name = var_name.strip()
+                expr = expr.strip()
+                if expr.isdigit():
+                    output.append(f"    mov rax, {expr}")
+                else:
+                    output.append(f"    mov rax, [{expr.lower()}]")
+                output.append(f"    mov [{var_name.lower()}], rax")
+                
+            elif '(' in line and ')' in line:
+                func_name = line.split('(')[0].strip()
+                params = line.split('(')[1].split(')')[0].split(',')
+                for param in params:
+                    output.append(f"    push [{param.strip().lower()}]")
+                output.append(f"    call {func_name}")
+                output.append(f"    add rsp, {len(params) * 8}")
+                
             i += 1
-            
-        output_filename = input_filename.replace('.txt', '.asm')
         
+        base_filename = os.path.basename(input_filename).replace('.txt', '.asm')
+        output_directory = os.path.join('output', 'asm')
+        
+        # Ensure the output directory exists
+        if not os.path.exists(output_directory):
+            os.makedirs(output_directory)
+        
+        output_filename = os.path.join(output_directory, base_filename)
+
+
         with open(output_filename, 'w') as file:
             file.write('\n'.join(output))
             
