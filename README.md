@@ -28,11 +28,13 @@ The project will include the following main components:
 
 - ### Initial Compiler Setup and Usage Guide
 
+  The set up is already configured that one can just add the filenames and run the code. The code is in the `src` directory.
+
   - #### Single File Compilation
 
     - ##### 1. Configure File Paths
 
-      In `main.py`, set the following file paths:
+      In `src/main.py`, set the following file paths:
 
       ```python
       code_filename = "RecSPL.txt"          # Input source code file
