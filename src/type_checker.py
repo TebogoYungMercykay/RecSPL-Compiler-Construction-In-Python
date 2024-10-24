@@ -1,4 +1,4 @@
-# TYPE CHECKING PART
+# Type Checker for the RecSPL Language
 
 class TypeChecker:
     def __init__(self, syntax_tree, symbols):
