@@ -7,7 +7,7 @@ num F_calculate(V_d, V_e, V_f)
 {
     num V_g, num V_h, text V_i,
     begin
-        return add(mul(V_a, V_b), sqrt(V_a));
+        print "Hii";
         skip;
     end
 }

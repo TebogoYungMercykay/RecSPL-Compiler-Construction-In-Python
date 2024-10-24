@@ -7,7 +7,7 @@ num F_calculate(V_d, V_e, V_f)
 {
     num V_g, num V_h, text V_i,
     begin
-        return add(V_a, V_g);
+        print 9888;
         skip;
     end
 }
