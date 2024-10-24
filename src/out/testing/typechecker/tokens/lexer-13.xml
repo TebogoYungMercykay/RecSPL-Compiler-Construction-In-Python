@@ -173,105 +173,40 @@
     <TOK>
         <ID>35</ID>
         <CLASS>reserved_keyword</CLASS>
-        <WORD>return</WORD>
+        <WORD>print</WORD>
     </TOK>
     <TOK>
         <ID>36</ID>
-        <CLASS>reserved_keyword</CLASS>
-        <WORD>add</WORD>
+        <CLASS>T</CLASS>
+        <WORD>&quot;Hii&quot;</WORD>
     </TOK>
     <TOK>
         <ID>37</ID>
         <CLASS>reserved_keyword</CLASS>
-        <WORD>(</WORD>
+        <WORD>;</WORD>
     </TOK>
     <TOK>
         <ID>38</ID>
         <CLASS>reserved_keyword</CLASS>
-        <WORD>mul</WORD>
+        <WORD>skip</WORD>
     </TOK>
     <TOK>
         <ID>39</ID>
         <CLASS>reserved_keyword</CLASS>
-        <WORD>(</WORD>
+        <WORD>;</WORD>
     </TOK>
     <TOK>
         <ID>40</ID>
-        <CLASS>V</CLASS>
-        <WORD>V_a</WORD>
-    </TOK>
-    <TOK>
-        <ID>41</ID>
-        <CLASS>reserved_keyword</CLASS>
-        <WORD>,</WORD>
-    </TOK>
-    <TOK>
-        <ID>42</ID>
-        <CLASS>V</CLASS>
-        <WORD>V_b</WORD>
-    </TOK>
-    <TOK>
-        <ID>43</ID>
-        <CLASS>reserved_keyword</CLASS>
-        <WORD>)</WORD>
-    </TOK>
-    <TOK>
-        <ID>44</ID>
-        <CLASS>reserved_keyword</CLASS>
-        <WORD>,</WORD>
-    </TOK>
-    <TOK>
-        <ID>45</ID>
-        <CLASS>reserved_keyword</CLASS>
-        <WORD>sqrt</WORD>
-    </TOK>
-    <TOK>
-        <ID>46</ID>
-        <CLASS>reserved_keyword</CLASS>
-        <WORD>(</WORD>
-    </TOK>
-    <TOK>
-        <ID>47</ID>
-        <CLASS>V</CLASS>
-        <WORD>V_a</WORD>
-    </TOK>
-    <TOK>
-        <ID>48</ID>
-        <CLASS>reserved_keyword</CLASS>
-        <WORD>)</WORD>
-    </TOK>
-    <TOK>
-        <ID>49</ID>
-        <CLASS>reserved_keyword</CLASS>
-        <WORD>)</WORD>
-    </TOK>
-    <TOK>
-        <ID>50</ID>
-        <CLASS>reserved_keyword</CLASS>
-        <WORD>;</WORD>
-    </TOK>
-    <TOK>
-        <ID>51</ID>
-        <CLASS>reserved_keyword</CLASS>
-        <WORD>skip</WORD>
-    </TOK>
-    <TOK>
-        <ID>52</ID>
-        <CLASS>reserved_keyword</CLASS>
-        <WORD>;</WORD>
-    </TOK>
-    <TOK>
-        <ID>53</ID>
         <CLASS>reserved_keyword</CLASS>
         <WORD>end</WORD>
     </TOK>
     <TOK>
-        <ID>54</ID>
+        <ID>41</ID>
         <CLASS>reserved_keyword</CLASS>
         <WORD>}</WORD>
     </TOK>
     <TOK>
-        <ID>55</ID>
+        <ID>42</ID>
         <CLASS>reserved_keyword</CLASS>
         <WORD>end</WORD>
     </TOK>
