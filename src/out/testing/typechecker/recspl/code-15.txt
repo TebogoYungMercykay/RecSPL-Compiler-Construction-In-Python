@@ -9,7 +9,7 @@ num F_calculate(V_d, V_e, V_f)
     num V_g, num V_h, text V_i,
     begin
         skip;
-        F_calculates(V_g, V_h, V_i);
+        F_calculates(V_g, V_h, V_h);
     end
 }
     void F_calculates(V_j, V_k, V_l)
