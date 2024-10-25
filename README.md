@@ -14,14 +14,14 @@ This `src/` directory contains the core components of our `Recursive Student Pro
 - `out/`: Directory for storing output files generated during compilation.
 - `...`
 
-## Planned Components (100% complete marked with `*`)
+## Planned Components (100% completed tasks marked with `*`)
 
 The project will include the following main components:
 
 1. **Lexer**: Tokenizes the input source code. (`*`)
 2. **Parser**: Performs syntactic analysis and builds an abstract syntax tree. (`*`)
 3. **Scope-Analyser**: Handles scope resolution and symbol table management. (`*`)
-4. **Type-Checker**: Performs semantic analysis and type checking. (`*`)
+4. **Type-Checker**: Performs semantic analysis and type-checking. (`*`)
 5. **Code-Generator**: Generates target code or intermediate representation.
 
 ## How to Run Compiler:
